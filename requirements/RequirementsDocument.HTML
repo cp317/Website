@@ -1,0 +1,194 @@
+<html>
+
+<body>
+    <header>
+        <center>
+            <h1>
+                Study Space
+            </h1>
+            Requirements Document
+            <br> Version 1.3 - 5/24/2017
+        </center>
+    </header>
+    <ul>
+        <li><a href="#1.0">1.0 Introduction</a></li>
+        <ul>
+            <li><a href="#1.1">1.1 Purpose</a></li>
+            <li><a href="#1.2">1.2 Scope</a></li>
+            <li><a href="#1.3">1.3 Document Lexicon</a></li>
+            <ul>
+                <li><a href="#1.3.1">1.3.1 Definitions</a>
+                <li><a href="#1.3.2">1.3.2 Acronyms and Abbreviations</a></li>
+            </ul>
+            <li><a href="#1.4">1.4 References</a></li>
+            <li><a href="#1.5">1.5 Overview</a></li>
+        </ul>
+        <li><a href="#2.0">2.0 Overall Description</a></li>
+        <ul>
+            <li><a href="#2.1">2.1 Product Perspective</a></li>
+            <ul>
+                <li><a href="#2.1.1">2.1.1 User Interfaces</a></li>
+            </ul>
+            <li><a href="#2.2">2.2 Product Functions</a></li>
+            <li><a href="#2.3">2.3 User Characteristics</a></li>
+            <li><a href="#2.4">2.4 constraints</a></li>
+            <li><a href="#2.5">2.5 Assumptions and Dependencies</a></li>
+        </ul>
+        <li><a href="#3.0">3.0 Specific Requirements</a></li>
+        <ul>
+            <li><a href="#3.1">3.1 External Interfaces</a></li>
+            <li><a href="#3.2">3.2 Functions</a></li>
+            <li><a href="#3.3">3.3 Logical Database Requirements</a></li>
+            <li><a href="#3.4">3.4 Portabilitiy</a></li>
+        </ul>
+        <li><a href="#4.0">4.0 Optional Features</a></li>
+        <li><a href="#5.0">5.0 Versions</a></li>
+        <li><a href="#6.0">6.0 Authored By</a></li>
+    </ul>
+    <br>
+	<h2><span id="1.0">1. Introduction</span></h2>
+	Study Group Finder is a web-based application that allows students in any university to post and find study group locations. The purpose of this application is to allow students to find study groups with ease. By doing so, students will be able to help each other achieve their academic goals as well as make new acquaintances.
+
+		<h3><span id="1.1">1.1 Purpose </span></h3>
+		This document outlines the requirements of the Study Group Finder application and describes its features. During the creation of the application, everyone involved will refer to this document to understand the requirements as well as use it as the basis for their work.
+
+		<h3><span id="1.2">1.2 Scope</span></h3>
+		The software being produced is a website called Study Group Finder. This software will be used by students to search for people nearby who are studying or doing homework. The objective is to bring students together so they may more easily achieve their academic goals.
+
+		<h3><span id="1.3">1.3 Document Lexicon</span></h3>
+		
+			<h4><span id="1.3.1">1.3.1 Definitions</span></h4>
+				<u>Course</u>: a course taken at a university, often represented by a course code, ex. CP317
+				<br>
+				<u>User</u>: someone who accesses the website, who we will assume is a student
+				<br>
+				<u>Beacon</u>: a study location and the details of that study group, such as the course code and . session time remaining
+				<br>
+				<u>Beacon Description</u>: a user entered description of the Beacon, where they state specifics of the location, such as the room number, and what they are currently working on.
+				<br>
+				<u>Tags</u>: A tag is a small icon which will appear on the left side of the display. This tag will provide information about a group's location to the user. Such as if the location takes place in a computer lab or if the location has a whiteboard.
+				<br>
+				<u>Beacon Preview</u>: The Beacon as it appears on the map. When a user moves their mouse over the beacon, this icon will give a small preview about the given beacon’s description. For a more detailed description of the location the user may go to the left side of the page.
+				<br>
+				<u>Arrival Time</u>: The time the Beacon creator will arrive at the study location.
+				<br>
+				<u>Departure Time</u>: The time the Beacon creator will leave the study location.
+		
+			<h4><span id="1.3.2">1.3.2 Acronyms, and Abbreviations</span></h4>
+				<u>SRS</u>: Software Requirements Specifications. This is the document which has all requirements and standards contained.
+				<br>
+				<u>DBMS</u>: Database Management System. This is the system which will be used to create and administrate the required databases. Examples include Oracle, MySQL, Microsoft Access, etc.
+				<br>
+				<u>SDLC</u>: Software Development Lifecycle. This is the entire lifetime of software platform from conceptualization all the way to maintenance and eventually retirement.
+				<br>
+				<u>GUI</u>: Graphical User Interface. This is the interface which the user will interact with, consisting of traditional buttons and bars. As well as less known graphics such as the map that we will be using.
+		
+		<h3><span id="1.4">1.4 References</span></h3>
+		This SRS document is based on IEEE Std 830-1998.
+	   
+		<h3><span id="1.5">1.5 Overview</span></h3>
+		The rest of this document contains details on the appearance and functionality of the Study Group Finder program.
+	
+	<h2><span id="2.0">2. Overall Description</span></h2>
+	
+		<h3><span id="2.1">2.1 Product Perspective</span></h3>
+		Study Group Finder is a web based application with two major components: front end and back end. It will also implement the Leaflet / Google Maps API in order to display a map to the user. It will take input from the user to determine relevant beacons to display to them.
+
+			<h4><span id="2.1.1">2.1.1 User Interfaces</span></h4>
+			The main view will have a map taking up the right side of the web application. The left half of it will have three filters at the top, which can be used to sort for location, school name, and course code. Below that, there will be six boxes giving details on the six nearest groups. These boxes will include various details including departure time, room number and users present. This will be a scrollable list for searches with multiple beacons. 
+
+		<h3><span id="2.2">2.2 Product Functions</span></h3>
+		Every user will have the option to create a group or join a group. When a user creates a group they will specify attributes of the group, such as the course code, where the group will be located, and how long the group will be there. If a user wishes to join a group, they will be able to select a group by looking at a map or by scrolling through a list of nearby groups. The user will be able to search for nearby groups by location, and filter these groups by the university they attend and the course code of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. 
+		
+		<h3><span id="2.3">2.3 User Characteristics</span></h3>
+		The intended audience are post-secondary students with the technical expertise to use a website. High school students could also use this product as well.
+
+		<h3><span id="2.4">2.4 Constraints</span></h3>
+		Multiple users must be able to access the website at once. To ensure the website feels responsive, the map of nearby beacons should update within a second whenever a user changes their parameters.
+
+		<h3><span id="2.5">2.5 Assumptions and Dependencies</span></h3>
+		Users are assumed to have a functioning web-capable device with a browser that is compatible with Leaflet/Google Maps. They are expected to have an internet connection until they enter their parameters and relevant Beacons are displayed. Once they have loaded their nearby Beacons, they should be able to disconnect from the internet and still view them, so they can check a Beacon’s description while they are traveling to it. This application should function on any operating system.
+
+	<h2><span id="3.0">3. Specific Requirements</span></h2>
+	
+		<h3><span id="3.1">3.1 External Interfaces</span></h3>
+		
+		<ul>
+			<li>The location entered by the user will both be used as a filter, or if they make their own beacon, will serve as their location. It will find nearby beacons or serve as the location for its own beacon. The user will be able to search for their location using the Leaflet/Google Maps API.</li>
+			<li>When a user creates a beacon, they will have the option to enter a description, such as specifying their location and the project they are working on. The length of this string will be limited by what fits comfortably within the GUI. </li>
+			<li>During the beacon creation process, a user will need to enter their approximate arrival and departure time. A beacon will stop being displayed to users after the departure time unless extended by the host. To ensure that the departure time is accurate, users will have the option to delete or edit their beacon after creating one.</li>
+			<li>The course code entered by the user serves as a filter to find the relevant beacons.  The course code will have a limit of 8 characters.  The course code filter will work in conjunction with the other filters in order to narrow down the most suitable beacons currently near them.</li>
+			<li>The name of a user’s high school/university will be entered by the user to be used as another beacon filter.</li>
+			<li>If a user searches for a beacon and none are found, display a message saying none have been found.</li>
+			<li>The beacon display boxes along the left side of the web application will include the school name, course code, user entered description, the beacon start/end time, and icons for tags such as whether there is a computer lab, whiteboards, WiFi, etc.</li>
+			<li>The screen display must fit the window on any resolution display and adjust automatically if the user resizes the window.</li>
+		</ul>
+		
+		<h3><span id="3.2">3.2 Functions</span></h3>
+		The system shall ensure that when a user creates a beacon and have not left the location, school name, course code, arrival time, or departure time fields blank. If the Leaflet/Google Maps API cannot determine the position of their location, it will not be accepted. The departure time must be after the arrival time, but no more than 12 hours after. Any spaces in the course code will be removed to simplify searching. A user is only allowed to have one active beacon at a time. If they wish to create a beacon while another still exists, they will be asked to edit or delete their existing beacon before creating a new one. Once the application receives acceptable input, the data will be stored in a database.
+		
+		<h3><span id="3.3">3.3 Logical Database Requirements</span></h3>
+		The <b>beacon</b> table will include exactly one row for each beacon, and a unique primary key for each beacon. It will include the longitude and latitude of the study group, their school, course code, arrival time, and departure time. It will also include boolean columns for various tags, such as whether or not there is a computer lab, whiteboards, WiFi, etc. The <b>beacon</b> table will be accessed every 5-15 minutes to refresh the list of nearby beacons. The <b>beacon</b> table will need to be updated everytime a user creates a new beacon.
+
+		<h3><span id="3.4">3.4 Portability</span></h3>
+		We must create the application to be accessible on all devices, both mobile and desktop. This means it must be able to be accessed on Windows, Mac OS, and Linux devices. There is no mobile version of the web site. Because of the application’s web based nature, it is also necessary to make it work flawlessly on all browsers which are most commonly used, including Google Chrome, Firefox, Safari, and Internet Explorer (version 8.0+). 
+	
+	<h2><span id="4.0">4. Optional Features</span></h2>
+	The basic functions that our application must include are outlined in Section 2.2. In addition to those features, there are other functions we hope to include. However, due to time constraints, these functions may not be included in the final product. Listed below are these additional features:
+	<ul>
+		<li>Account login process</li>
+		<li>Getting user profile icons using their email address</li>
+		<li>Intelligent correction of user mistakes when inputting school name</li>
+		<li>Favourite locations</li>
+		<li>Quiet/busy areas on map</li>
+		<li>Suggested locations to users</li>
+		<li>Search for multiple courses at once (separated by comma, semicolon, etc.)</li>
+		<li>Automatically open at user’s location / automatically move to school’s location</li>
+	</ul>
+	
+	<h2><span id="5.0">5. Versions</span></h2>
+	Version 0.0 - 5/5/2017<br>
+	<i>Created document outline</i><br>
+		<p style="margin-left: 40px">Jake Loftus</p>
+
+	Version 1.0 - 5/15/2017<br>
+	<i>Sections modified and expanded</i>
+		<p style="margin-left: 40px">Jake Loftus<br>
+									 Sheldon Van Middelkoop<br>
+									 Andrew Fong<br>
+									 Amelia Lee</p>
+
+	Version 1.1 - 5/17/2017<br>
+	<i>Adjusted document based on SQA suggestions</i>
+		<p style="margin-left: 40px">Jake Loftus<br>
+									 Amelia Lee<br>
+									 Sheldon Van Middelkoop</p>
+	<i>Thanks to SQA by</i>
+		<p style="margin-left: 40px">Mitchell Marino<br>
+									 Gareth John Sharpe<br>
+									 Minji Kang<br>
+									 Rishhi Balakrishnan</p>
+
+	Version 1.2 - 5/20/2017<br>
+	<i>Adjusted document based on David Brown’s suggestions</i>
+		<p style="margin-left: 40px">Jake Loftus<br>
+									 Sheldon Van Middelkoop</p>
+	<i>Thanks to SQA by</i><br>
+		<p style="margin-left: 40px">David Brown<br>
+									 Gareth John Sharpe</p>
+
+	Version 1.3 - 5/24/2017<br>
+	<i>Adjusted document based on SQA suggestions</i>
+		<p style="margin-left: 40px">Jake Loftus</p>
+	<i>Thanks to SQA by</i>
+		<p style="margin-left: 40px">Minji Kang</p>
+	
+	<h2><span id="6.0">6. Authored By</span></h2>
+	<ul>
+		<li>Jake Loftus</li>
+		<li>Sheldon Van Middelkoop</li>
+		<li>Andrew Fong</li>
+		<li>Amelia Lee</li>
+	</ul>
+</body>
+</html>
