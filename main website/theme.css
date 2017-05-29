@@ -1,0 +1,63 @@
+body {
+    height: 100vh;
+}
+
+nav {
+    height: 65px;
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        height: 56px;
+    }
+}
+
+#main-row {
+    height: calc(100vh - 65px);
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 600px) {
+    #main-row {
+        height: calc( 100vh - 56px);
+    }
+}
+
+.main-grid {
+    background: teal;
+    height: 100%
+}
+
+@media screen and (max-width: 600px) {
+    .main-grid {
+        background: teal;
+        height: 50%
+    }
+}
+
+#search {
+    margin-top: 10px;
+    background: white;
+}
+
+@media screen and (max-width: 600px) {
+    #search {
+        display: none;
+    }
+}
+
+#description {
+    margin-top: 10px;
+    background: white;
+}
+
+#map {
+    background: grey;
+    height: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .search {
+        display: none;
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+    <link rel="stylesheet" type="text/css" href="theme.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src="javascript.js"></script>
+
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#" data-activates="mobile" class="button-collapse search"><i class="material-icons">search</i></a>
+            
+            <ul class="right">
+                <a href="#" data-activates="mobile" class=""><i class="material-icons">perm_identity</i></a>
+            </ul>
+            
+            <ul class="side-nav" id="mobile">
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div id="main-row" class="row">
+        <div class="main-grid col s12 m6">
+            <div id="search" class="row">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Waterloo" id="first_name" type="text" class="validate">
+                        <label for="first_name">City</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Laurier" id="first_name" type="text" class="validate">
+                        <label for="first_name">School</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 l6">
+                        <label>Tags</label>
+                        <select multiple>
+                            <!-- This would be filled in with an array -->
+                            <option value="" disabled selected>Select Tags</option>
+                            <option value="1" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600">Right Tag Square </option>
+                            <option value="2" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600" class="circle">Right Tag Circle</option>
+                            <option value="3" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600" class="left">Left Tag Square</option>
+                            <option value="3" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600" class="left circle">Left Tag Circle</option>
+                        </select>
+                    </div>
+                    <div class="col s12 l6">
+                        <label>Class</label>
+                        <select>
+                            <!-- This would be filled in with an array -->
+                            <option value="" disabled selected>Select Tags</option>
+                            <option value="1">Right Tag Square </option>
+                            <option value="2">Right Tag Circle</option>
+                            <option value="3">Left Tag Square</option>
+                            <option value="3">Left Tag Circle</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The description cards will be filled by an array(for loop) -->
+            <div id="description" class="row">
+                cards will go here
+            </div>
+        </div>
+        <div class="main-grid col s12 m6">
+            <div id="map">map goes here
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
