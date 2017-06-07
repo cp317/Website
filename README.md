@@ -5,22 +5,22 @@ https://cp317.github.io/Website/
 # Schedule
 
 ## <u>Analysis:</u>
-[ ] Write up for existing features - <b>Monday June 12</b>
-[ ] Diagrams for new features - <b>Wednesday June 14</b>
+- [ ] Write up for existing features - <b>Monday June 12</b>
+- [ ] Diagrams for new features - <b>Wednesday June 14</b>
 
 ## <u>Requirements:</u>
 
-[ ] Update documents with new features - <b> Monday June 12 </B>
+- [ ] Update documents with new features - <b> Monday June 12 </B>
 
 ## <u>Design: </u>
-[ ] Meet with dev teams - <b>After June 12 Class</b>
-[ ] Write design document - <b>Wedneday June 14 </b>
+- [ ] Meet with dev teams - <b>After June 12 Class</b>
+- [ ] Write design document - <b>Wedneday June 14 </b>
 
 ## <u>Dev Teams - Frontend and Backend </u>
-[ ] Start coding after meeting on <b> June 12 </b>
-[ ] Demonstrations <b>every week</b>
-[ ] Base code done by <b> June 26</b>
-[ ] Additional features due <b> July 10 </b>
+- [ ] Start coding after meeting on <b> June 12 </b>
+- [ ] Demonstrations <b>every week</b>
+- [ ] Base code done by <b> June 26</b>
+- [ ] Additional features due <b> July 10 </b>
 
 
 # SQA/Creating an Issue
