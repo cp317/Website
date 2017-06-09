@@ -39,7 +39,7 @@ var beacon = {
     location: "King Street and Bricker Avenue"
 };
 ```
-ddddddddddddd
+
 ## <u>Commenting:</u>
 * Have a block on top of a function which describes what the method does.
 * If necessary, include a comment on the side of a line of code that describes what that line is doing.
