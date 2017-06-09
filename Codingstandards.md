@@ -2,7 +2,7 @@
 
 ## <u>Naming Conventions:</u>
 * We will use <i>lowerCamelCase</i> for variable names i.e. beaconName = "Laurier";
-* We will use <i>PascalCase</i> for function names.
+* We will use <i>PascalCase</i> for function names. i.e. function FunctionName()
 * Function names have to be descriptive. i.e Don't name a function that creates a beacon "Banana". Use "CreateBeacon".
 * We will use <i>UPPERCASE</i> for global variables and constants.
 
