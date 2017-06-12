@@ -77,6 +77,7 @@
 				<u>Arrival Time</u>: The time the Beacon creator will arrive at the study location.
 				<br>
 				<u>Departure Time</u>: The time the Beacon creator will leave the study location.
+				<u>Chat box</u>: Each beacon will include a discussion where users can post messages to comment or ask questions about the beacon.
 		
 			<h4><span id="1.3.2">1.3.2 Acronyms, and Abbreviations</span></h4>
 				<u>SRS</u>: Software Requirements Specifications. This is the document which has all requirements and standards contained.
@@ -99,13 +100,13 @@
 		Study Group Finder is a web based application with two major components: front end and back end. It will also implement the Leaflet / Google Maps API in order to display a map to the user. It will take input from the user to determine relevant beacons to display to them.
 
 			<h4><span id="2.1.1">2.1.1 User Interfaces</span></h4>
-			The main view will have a map taking up the right side of the web application. The left half of it will have three filters at the top, which can be used to sort for location, school name, and course code. Below that, there will be a scrollable list displaying boxes showing detailed information all the nearby beacons. These boxes will include various details including departure time, room number and users present. In the top right of the screen, there will be a buttons that will bring a window for the user to login or register an account. This window will also include the option for a user to reset their password if they have forgotten it. 
+			The main view will have a map taking up the right side of the web application. The left half of it will have three filters at the top, which can be used to sort for location, school name, and course code. Below that, there will be a scrollable list displaying boxes showing detailed information all the nearby beacons. These boxes will include various details including departure time, room number and users present. In the top right of the screen, there will be a buttons that will bring a window for the user to login or register an account. This window will also include the option for a user to reset their password if they have forgotten it. There will be a chat box for each beacon, which is initially hidden but can be opened by the user. 
 			
 			<h4>Sample GUI</h4>
 			<img src="Sample-GUI.png" alt="Sample GUI Image" style="width:1130;height:636;">
 
 		<h3><span id="2.2">2.2 Product Functions</span></h3>
-		Every user will have the option to create a group or join a group. When a user creates a group they will specify attributes of the group, such as the course code, where the group will be located, and how long the group will be there. If a user wishes to join a group, they will be able to select a group by looking at a map or by scrolling through a list of nearby groups. The user will be able to search for nearby groups by location, and filter these groups by the university they attend and the course code of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users will have the option to register an account and sign in to the website, which will allow them to view and edit their beacons from any device they sign in with.
+		Every user will have the option to create a group or join a group. When a user creates a group they will specify attributes of the group, such as the course code, where the group will be located, and how long the group will be there. If a user wishes to join a group, they will be able to select a group by looking at a map or by scrolling through a list of nearby groups. The user will be able to search for nearby groups by location, and filter these groups by the university they attend and the course code of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users will have the option to register an account and sign in to the website, which will allow them to view and edit their beacons from any device they sign in with. Users will be able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon.
 		
 		<h3><span id="2.3">2.3 User Characteristics</span></h3>
 		The intended audience are post-secondary students with the technical expertise to use a website. High school students could also use this product as well.
@@ -219,6 +220,17 @@
 	<i>Thanks to SQA by</i>
 		<ul>
 		<li>Amnah Alahmadi</li>
+		</ul>
+		
+<h3>Version 1.5 - 6/12/2017</h3>
+	<i>Added additional requirements, specifically the chat functionality</i>
+		<ul>
+		<li>Jake Loftus</li>
+		<li>Andrew Fong</li>
+		</ul>
+	<i>Thanks to SQA by</i>
+		<ul>
+		<li>Jonathan Wu</li>
 		</ul>
 	
 	<h2><span id="6.0">6. Authored By</span></h2>
