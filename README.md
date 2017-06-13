@@ -10,7 +10,7 @@ https://cp317.github.io/Website/
 
 ## <u>Requirements:</u>
 
-- [ ] Update documents with new features - <b> Monday June 12 </B>
+- [x] Update documents with new features - <b> Monday June 12 </B>
 
 ## <u>Design: </u>
 - [ ] Meet with dev teams - <b>After June 12 Class</b>
