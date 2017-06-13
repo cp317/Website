@@ -13,7 +13,7 @@ https://cp317.github.io/Website/
 - [x] Update documents with new features - <b> Monday June 12 </B>
 
 ## <u>Design: </u>
-- [ ] Meet with dev teams - <b>After June 12 Class</b>
+- [x] Meet with dev teams - <b>After June 12 Class</b>
 - [ ] Write design document - <b>Wedneday June 14 </b>
 
 ## <u>Dev Teams - Frontend and Backend </u>
