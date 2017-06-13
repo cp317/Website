@@ -58,9 +58,13 @@
 		<h3><span id="1.3">1.3 Document Lexicon</span></h3>
 		
 			<h4><span id="1.3.1">1.3.1 Definitions</span></h4>
-				<u>Course</u>: a course taken at a university, often represented by a course code, ex. CP317
+				<u>Course</u>: a course taken at a university, often represented by a course code, ex. CP317.
+				<br>
+				<u>Course Page</u>: a page with details on the course i.e: midterm details, sections/professor names etc
 				<br>
 				<u>User</u>: someone who accesses the website, who we will assume is a student
+				<br>
+				<u>User Profile</u>: a page with personal details about the assumed student.  The profile provides functionality such as beacon invites, and course lists.
 				<br>
 				<u>Registered User</u>: a user who has created an account and logged in
 				<br>
@@ -68,6 +72,8 @@
 				<br>
 				<u>Beacon</u>: a study location and the details of that study group, such as the course code and . session time remaining
 				<br>
+				<u>Notifications</u>: a message informing the user a beacon for a course they're in has opened up 
+				<br> 
 				<u>Beacon Description</u>: a user entered description of the Beacon, where they state specifics of the location, such as the room number, and what they are currently working on.
 				<br>
 				<u>Tags</u>: A tag is a small icon which will appear on the left side of the display. This tag will provide information about a group's location to the user. Such as if the location takes place in a computer lab or if the location has a whiteboard.
@@ -100,13 +106,13 @@
 		Study Group Finder is a web based application with two major components: front end and back end. It will also implement the Leaflet / Google Maps API in order to display a map to the user. It will take input from the user to determine relevant beacons to display to them.
 
 			<h4><span id="2.1.1">2.1.1 User Interfaces</span></h4>
-			The main view will have a map taking up the right side of the web application. The left half of it will have three filters at the top, which can be used to sort for location, school name, and course code. Below that, there will be a scrollable list displaying boxes showing detailed information all the nearby beacons. These boxes will include various details including departure time, room number and users present. In the top right of the screen, there will be a buttons that will bring a window for the user to login or register an account. This window will also include the option for a user to reset their password if they have forgotten it. There will be a chat box for each beacon, which is initially hidden but can be opened by the user. 
+			The main view will have a map taking up the right side of the web application. The left half of it will have three filters at the top, which can be used to sort for location, school name, and course code. Below that, there will be a scrollable list displaying boxes showing detailed information all the nearby beacons. These boxes will include various details including departure time, room number and users present. In the top right of the screen, there will be a buttons that will bring a window for the user to login or register an account. This window will also include the option for a user to reset their password if they have forgotten it. There will be a chat box for each beacon, which is initially hidden but can be opened by the user. Notifications, and invites will appear in the same fashion as chat boxes.
 			
 			<h4>Sample GUI</h4>
 			<img src="Sample-GUI.png" alt="Sample GUI Image" style="width:1130;height:636;">
 
 		<h3><span id="2.2">2.2 Product Functions</span></h3>
-		Every user will have the option to create a group or join a group. When a user creates a group they will specify attributes of the group, such as the course code, where the group will be located, and how long the group will be there. If a user wishes to join a group, they will be able to select a group by looking at a map or by scrolling through a list of nearby groups. The user will be able to search for nearby groups by location, and filter these groups by the university they attend and the course code of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users will have the option to register an account and sign in to the website, which will allow them to view and edit their beacons from any device they sign in with. Users will be able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon.
+		Every user will have the option to create a group or join a group. When a user creates a group they will specify attributes of the group, such as the course code, where the group will be located, and how long the group will be there.  If a user is registered for the same course, they will receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they will be able to select a group by looking at a map or by scrolling through a list of nearby groups. The user will be able to search for nearby groups by location, and filter these groups by the university they attend and the course code/course page of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users will have the option to register an account and sign in to the website, which will allow them to view and edit their beacons from any device they sign in with. Users will be able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon. Users are also able to create a more complete profile of themselves with more details and be invited to beacons allowing for an easy way to set up beacons with familiar people.
 		
 		<h3><span id="2.3">2.3 User Characteristics</span></h3>
 		The intended audience are post-secondary students with the technical expertise to use a website. High school students could also use this product as well.
@@ -131,6 +137,8 @@
 			<li>The beacon display boxes along the left side of the web application will include the school name, course code, user entered description, the beacon start/end time, and icons for tags such as whether there is a computer lab, whiteboards, WiFi, etc.</li>
 			<li>The screen display must fit the window on any resolution display and adjust automatically if the user resizes the window.</li>
 			<li>There will be a chat window in the bottom right of the screen, where the user can communicate with their friends and other users of the site.</li>
+			<li>The notification box will be adjacent to where the chat windows are, and they will be able to see beacons coming up for courses they are registered for.</li>
+			<li>The course page will allow users to view details on their course submitted by other users.  Some details present will be exam details, sections, and other pertinent information to the course.</li>
 		</ul>
 		
 		<h3><span id="3.2">3.2 Functions</span></h3>
