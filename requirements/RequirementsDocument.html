@@ -53,7 +53,7 @@
 		This document outlines the requirements of the Study Group Finder application and describes its features. During the creation of the application, everyone involved will refer to this document to understand the requirements as well as use it as the basis for their work.
 
 		<h3><span id="1.2">1.2 Scope</span></h3>
-		The software being produced is a website called Study Group Finder. This software will be used by students to search for people nearby who are studying or doing homework. The objective is to bring students together so they may more easily achieve their academic goals.
+		The software being produced is a website called Study Group Finder. This software will be used by students to search for and message people nearby who are studying or doing homework. The objective is to bring students together so they may more easily achieve their academic goals.
 
 		<h3><span id="1.3">1.3 Document Lexicon</span></h3>
 		
@@ -64,7 +64,7 @@
 				<br>
 				<u>User</u>: someone who accesses the website, who we will assume is a student
 				<br>
-				<u>User Profile</u>: a page with personal details about the assumed student.  The profile provides functionality such as beacon invites, and course lists.
+				<u>User Profile</u>: a page with personal details about the assumed student.  The profile provides functionality such as beacon invites, messaging, and course lists.
 				<br>
 				<u>Registered User</u>: a user who has created an account and logged in
 				<br>
@@ -74,7 +74,7 @@
 				<br>
 				<u>Notifications</u>: a message informing the user a beacon for a course they're in has opened up 
 				<br> 
-				<u>Beacon Description</u>: a user entered description of the Beacon, where they state specifics of the location, such as the room number, and what they are currently working on.
+				<u>Beacon Description</u>: a user entered description of the Beacon, where they state specifics of the location, such as the room number, arrival and departure time, and what they are/will be working on.
 				<br>
 				<u>Tags</u>: A tag is a small icon which will appear on the left side of the display. This tag will provide information about a group's location to the user. Such as if the location takes place in a computer lab or if the location has a whiteboard.
 				<br>
@@ -83,7 +83,7 @@
 				<u>Arrival Time</u>: The time the Beacon creator will arrive at the study location.
 				<br>
 				<u>Departure Time</u>: The time the Beacon creator will leave the study location.
-				<u>Chat box</u>: Each beacon will include a discussion where users can post messages to comment or ask questions about the beacon.
+				<u>Chat box</u>: Each user profile and beacon will include a discussion where users can post messages to comment or ask questions about the beacon.
 		
 			<h4><span id="1.3.2">1.3.2 Acronyms, and Abbreviations</span></h4>
 				<u>SRS</u>: Software Requirements Specifications. This is the document which has all requirements and standards contained.
@@ -106,13 +106,13 @@
 		Study Group Finder is a web based application with two major components: front end and back end. It will also implement the Leaflet / Google Maps API in order to display a map to the user. It will take input from the user to determine relevant beacons to display to them.
 
 			<h4><span id="2.1.1">2.1.1 User Interfaces</span></h4>
-			The main view will have a map taking up the right side of the web application. The left half of it will have three filters at the top, which can be used to sort for location, school name, and course code. Below that, there will be a scrollable list displaying boxes showing detailed information all the nearby beacons. These boxes will include various details including departure time, room number and users present. In the top right of the screen, there will be a buttons that will bring a window for the user to login or register an account. This window will also include the option for a user to reset their password if they have forgotten it. There will be a chat box for each beacon, which is initially hidden but can be opened by the user. Notifications, and invites will appear in the same fashion as chat boxes.
+			The main view will have a map taking up the right side of the web application. The left half of it will have three filters at the top, which can be used to sort for location, school name, and course code. Below that, there will be a scrollable list displaying boxes showing detailed information all the nearby beacons. These bozes will be ordered by arrival time and will include various details including departure time, room number and users present. In the top right of the screen, there will be a buttons that will bring a window for the user to login or register an account. This window will also include the option for a user to reset their password if they have forgotten it. There will be a chat box for each beacon, which is initially hidden but can be opened by the user. Notifications, and invites will appear in the same fashion as chat boxes.
 			
 			<h4>Sample GUI</h4>
 			<img src="Sample-GUI.png" alt="Sample GUI Image" style="width:1130;height:636;">
 
 		<h3><span id="2.2">2.2 Product Functions</span></h3>
-		Every user will have the option to create a group or join a group. When a user creates a group they will specify attributes of the group, such as the course code, where the group will be located, and how long the group will be there.  If a user is registered for the same course, they will receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they will be able to select a group by looking at a map or by scrolling through a list of nearby groups. The user will be able to search for nearby groups by location, and filter these groups by the university they attend and the course code/course page of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users will have the option to register an account and sign in to the website, which will allow them to view and edit their beacons from any device they sign in with. Users will be able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon. Users are also able to create a more complete profile of themselves with more details and be invited to beacons allowing for an easy way to set up beacons with familiar people.
+		Every user will have the option to create a group or join a group. When a user creates a group they will specify attributes of the group, such as the course code, where the group will be located, and how long the group will be there.  If a user is registered for the same course, they will receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they will be able to select a group by looking at a map or by scrolling through a list of nearby groups. The user will be able to search for nearby groups by location, and filter these groups by the university they attend and the course code/course page of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users will have the option to register an account and sign in to the website, which will allow them to view and edit their beacons from any device they sign in with. Users will be able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon. Users are also able to create a more complete profile of themselves with more details and be invited to beacons allowing for an easy way to set up beacons with familiar people. They can also find people via profile pages and chat with them privately.
 		
 		<h3><span id="2.3">2.3 User Characteristics</span></h3>
 		The intended audience are post-secondary students with the technical expertise to use a website. High school students could also use this product as well.
@@ -130,7 +130,7 @@
 		<ul>
 			<li>The location entered by the user will both be used as a filter, or if they make their own beacon, will serve as their location. It will find nearby beacons or serve as the location for its own beacon. The user will be able to search for their location using the Leaflet/Google Maps API.</li>
 			<li>When a user creates a beacon, they will have the option to enter a description, such as specifying their location and the project they are working on. The length of this string will be limited by what fits comfortably within the GUI. </li>
-			<li>During the beacon creation process, a user will need to enter their approximate arrival and departure time. A beacon will stop being displayed to users after the departure time unless extended by the host. To ensure that the departure time is accurate, users will have the option to delete or edit their beacon after creating one.</li>
+			<li>During the beacon creation process, a user will need to enter their approximate arrival and departure time. The beacons will be displayed in order of arrival time and will stop being displayed to users after the departure time unless extended by the host. To ensure that the departure time is accurate, users will have the option to delete or edit their beacon after creating one.</li>
 			<li>The course code entered by the user serves as a filter to find the relevant beacons.  The course code will have a limit of 8 characters.  The course code filter will work in conjunction with the other filters in order to narrow down the most suitable beacons currently near them.</li>
 			<li>The name of a user’s high school/university will be entered by the user to be used as another beacon filter.</li>
 			<li>If a user searches for a beacon and none are found, display a message saying none have been found.</li>
@@ -240,6 +240,7 @@
 		<ul>
 		<li>Jake Loftus</li>
 		<li>Andrew Fong</li>
+		<li>Amelia Lee</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
