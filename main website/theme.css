@@ -1,9 +1,16 @@
 body {
     height: 100vh;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 nav {
     position: fixed;
+    z-index: 10;
 }
 
 @media screen and (max-width: 600px) {
@@ -38,6 +45,7 @@ nav {
 
 .content {
     padding-top: 112px;
+    z-index: 0;
 }
 
 @media screen and (min-width: 600px) {
@@ -57,11 +65,16 @@ body #test1 {
     background: white;
 }
 
+.description-container::-webkit-scrollbar {
+    display: none;
+}
+
 .description-container {
     background: #f9d1d1;
-    padding: 10px 0;
+    padding: 10px 0px 62px 0px;
     width: 50%;
     height: 100%;
+    overflow-y: scroll;
 }
 
 .map-container {
@@ -96,7 +109,7 @@ body #test1 {
 #background{
     background:white;
     display: flex;
-    
+
 }
 #test2{
     background: #f9d1d1;
@@ -116,7 +129,7 @@ body #test1 {
     display:  flex;
     align-content: center;
     justify-content: center;
-    
+
 }
 
 #tag img {
@@ -149,6 +162,7 @@ body #test1 {
     position: absolute;
     height: 50px;
     width: 100%;
-    background: #ef5350 ;
-    bottom: 0px
+    background: #ef5350;
+    bottom: 0px;
+    z-index: 10;
 }
