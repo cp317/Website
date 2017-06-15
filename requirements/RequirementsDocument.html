@@ -7,7 +7,7 @@
                 Study Space
             </h1>
             Requirements Document
-            <br> Version 1.5 - 6/14/2017 
+            <br> Version 1.6 - 6/15/2017 
         </center>
     </header>
     <ul>
@@ -31,7 +31,7 @@
             </ul>
             <li><a href="#2.2">2.2 Product Functions</a></li>
             <li><a href="#2.3">2.3 User Characteristics</a></li>
-            <li><a href="#2.4">2.4 constraints</a></li>
+            <li><a href="#2.4">2.4 Constraints</a></li>
             <li><a href="#2.5">2.5 Assumptions and Dependencies</a></li>
         </ul>
         <li><a href="#3.0">3.0 Specific Requirements</a></li>
@@ -39,7 +39,7 @@
             <li><a href="#3.1">3.1 External Interfaces</a></li>
             <li><a href="#3.2">3.2 Functions</a></li>
             <li><a href="#3.3">3.3 Logical Database Requirements</a></li>
-            <li><a href="#3.4">3.4 Portabilitiy</a></li>
+            <li><a href="#3.4">3.4 Portability</a></li>
         </ul>
         <li><a href="#4.0">4.0 Optional Features</a></li>
         <li><a href="#5.0">5.0 Versions</a></li>
@@ -110,7 +110,7 @@
 			<img src="Sample-GUI.png" alt="Sample GUI Image" style="width:1130;height:636;">
 
 		<h3><span id="2.2">2.2 Product Functions</span></h3>
-		Every user will have the option to create a group or join a group. When a user creates a group they will specify attributes of the group, such as the course code, where the group will be located, and how long the group will be there.  If a user is registered for the same course, they will receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they will be able to select a group by looking at a map or by scrolling through a list of nearby groups. The user will be able to search for nearby groups by location, and filter these groups by the university they attend and the course code/course page of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users will have the option to register an account and sign in to the website, which will allow them to view and edit their beacons from any device they sign in with. Users will be able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon.  Users will be able to view the user profiles of other users, which will allow them to invite users to their beacon or start a private chat with the user. Users will also be able to view a course page for each course, which will contain user submitted information about the course, and will also include a chat. 
+		Every user will have the option to create a group or join a group. When a user creates a group they will specify attributes of the group, such as the course code, where the group will be located, and how long the group will be there.  If a user is registered for the same course, they will receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they will be able to select a group by looking at a map or by scrolling through a list of nearby beacons. The user will be able to search for nearby groups by location, and filter these groups by the university they attend and the course code/course page of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users will have the option to register an account and sign in to the website, which will allow them to view and edit their beacons from any device they sign in with. Users will be able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon.  Users will be able to view the user profiles of other users, which will allow them to invite users to their beacon or start a private chat with the user. Users will also be able to view a course page for each course, which will contain user submitted information about the course, and will also include a chat. 
 		
 		<h3><span id="2.3">2.3 User Characteristics</span></h3>
 		The intended audience are post-secondary students with the technical expertise to use a website. High school students could also use this product as well.
@@ -135,7 +135,7 @@
 			<li>The beacon display boxes along the left side of the web application will include the school name, course code, user entered description, the beacon start/end time, and icons for tags such as whether there is a computer lab, whiteboards, WiFi, etc.</li>
 			<li>The screen display must fit the window on any resolution display and adjust automatically if the user resizes the window.</li>
 			<li>There will be a chat window in the bottom right of the screen, where the user can communicate with their friends and other users of the site.</li>
-			<li>The notification box will be adjacent to where the chat windows are, and they will be able to see beacons coming up for courses they are registered for.</li>
+			<li>The notification box will be adjacent to the chat windows, and users will be able to see beacons coming up for courses they are registered for.</li>
 			<li>The course page will allow users to view details on their course submitted by other users. Some details present will be exam details, sections, and other pertinent information to the course. The course page will also include a chat for people to discuss the course.</li>
 		</ul>
 		
@@ -147,7 +147,7 @@
 			<li>Any spaces in the course code will be removed to simplify searching. For example, "CP 317" and "CP317" will both be compared as "CP317", and therefore will be matched.</li> 
 			<li>A user is only allowed to have one active beacon at a time. If they wish to create a beacon while another still exists, the start time of the new beacon must not overlap the duration of any of their existing or planned beacons.</li>
 			<li>Once the application receives acceptable input, the data will be stored in the beacon database.</li>
-			<li>Clicking the login button will gave the user the option to log in, register an account, or reset their password if they have forgotten it</li>
+			<li>Clicking the login button will give the user the option to log in, register an account, or reset their password if they have forgotten it</li>
 			<li>If a registered user creates a beacon while signed in, they are able to edit or delete this beacon from any device where they sign in</li>
 			<li>When a user attempts to register their account, their email address must be of an acceptable format, specifically “*@*.*”, where “*” is a wildcard for a varying amount of characters. The two passwords they enter must be identical, or a message will be displayed saying they are not. Until they have entered a valid email address and the two password fields are identical, they will not be able to create an account.</li>
 		</ul>
@@ -155,9 +155,9 @@
 		<h3><span id="3.3">3.3 Logical Database Requirements</span></h3>
 		<p>The <b>user</b> table will include exactly one row for each user. Each user will have their own distinct primary key, referred to as the user key. The other columns in this table will include the user’s email address and encrypted password. </p>
 		
-		<p>The <b>course</b> table will include exactly one row for each course, and will contain the course code and user entered details about the course. The course code will be the primary key, and it will also include a chat key from the <b>chat</b> table, so that the course page can retrieve the chat messages associated with the course page.</p>
+		<p>The <b>course</b> table will include exactly one row for each course, and will contain the course code and user-entered details about the course. The course code will be the primary key, and it will also include a chat key from the <b>chat</b> table, so that the course page can retrieve the chat messages associated with the course page.</p>
 		
-		<p>The <b>beacon</b> table will include exactly one row for each beacon, and a unique primary key for each beacon. It will include the longitude and latitude of the study group, their school, course code, arrival time, and departure time. It will also include boolean columns for various tags, such as whether or not there is a computer lab, whiteboards, WiFi, etc. It will also include the user key from the <b>user</b> table as a foreign key, which will allow beacons to be mapped to the user who created them. it will also include a chat key from the <b>chat</b> table, so the beacon page retrieve the chat messages associated with the beacon. The <b>beacon</b> table will be accessed every 5-15 minutes to refresh the list of nearby beacons. The <b>beacon</b> table will need to be updated every time a user creates a new beacon.</p>
+		<p>The <b>beacon</b> table will include exactly one row for each beacon, and a unique primary key for each beacon. It will include the longitude and latitude of the study group, their school, course code, arrival time, and departure time. It will also include boolean columns for various tags, such as whether or not there is a computer lab, whiteboards, WiFi, etc. It will also include the user key from the <b>user</b> table as a foreign key, which will allow beacons to be mapped to the user who created them. it will also include a chat key from the <b>chat</b> table, so the beacon page can retrieve the chat messages associated with the beacon. The <b>beacon</b> table will be accessed every 5-15 minutes to refresh the list of nearby beacons. The <b>beacon</b> table will need to be updated every time a user creates a new beacon.</p>
 		
 		<p>The <b>chat</b> table will include one row for every chat message sent. The primary key will be a chat key, which will refer to either the beacon, course page, or private discussion where the chat occurs. Specifically, each beacon, course page, or private discussion will have exactly one unique chat key, which will be associated with every message in that chat. The <b>chat</b> table will also include a string containing the text of the message, the time the message was sent, and the user key of the user who sent the message as a foreign key from the <b>user</b> table. </p>
 
@@ -177,7 +177,7 @@
 	</ul>
 	
 	<h2><span id="5.0">5. Versions</span></h2>
-	<h3>Version 0.0 - 5/5/2017</h3>
+	<h3>Version 0.1 - 5/5/2017</h3>
 	<i>Document outline created</i>
 	<ul>
 	<li>Jake Loftus</li>
@@ -249,6 +249,18 @@
 	<i>Thanks to SQA by</i>
 		<ul>
 		<li>Jonathan Wu</li>
+		</ul>
+		
+<h3>Version 1.6 - 6/15/2017</h3>
+	<i>Adjusted document based on SQA suggestions</i>
+		<ul>
+		<li>Jake Loftus</li>
+		<li>Andrew Fong</li>
+		</ul>
+	<i>Thanks to SQA by</i>
+		<ul>
+		<li>Gareth John Sharpe</li>
+		<li>Mark Kokanovic</li>
 		</ul>
 	
 	<h2><span id="6.0">6. Authored By</span></h2>
