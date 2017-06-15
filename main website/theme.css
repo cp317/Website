@@ -1,9 +1,16 @@
 body {
     height: 100vh;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 nav {
-    height: 65px;
+    position: fixed;
+    z-index: 10;
 }
 
 @media screen and (max-width: 600px) {
@@ -12,31 +19,8 @@ nav {
     }
 }
 
-#main-row {
-    height: calc(100vh - 65px);
-    margin-bottom: 0px;
-}
-
-@media screen and (max-width: 600px) {
-    #main-row {
-        height: calc( 100vh - 56px);
-    }
-}
-
-.main-grid {
-    background: teal;
-    height: 100%
-}
-
-@media screen and (max-width: 600px) {
-    .main-grid {
-        background: teal;
-        height: 50%
-    }
-}
-
 #search {
-    margin-top: 10px;
+    margin: 0 10px;
     background: white;
 }
 
@@ -46,18 +30,139 @@ nav {
     }
 }
 
-#description {
-    margin-top: 10px;
-    background: white;
+#map {
+    z-index: -1;
+    height: 100%;
+    width: 50%;
 }
 
-#map {
-    background: grey;
+#map img {
+    display: flex;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    padding-top: 112px;
+    z-index: 0;
 }
 
 @media screen and (min-width: 600px) {
     .search {
         display: none;
     }
+}
+
+body #test1 {
+    height: calc( 100vh - 112px);
+}
+
+#Card {
+    height: 200px;
+    width: calc(100% - 20px);
+    margin: 0px 10px;
+    background: white;
+}
+
+.description-container::-webkit-scrollbar {
+    display: none;
+}
+
+.description-container {
+    background: #f9d1d1;
+    padding: 10px 0px 62px 0px;
+    width: 50%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.map-container {
+    display: flex;
+    height: 100%;
+}
+
+#details {
+    padding: 0 10px;
+    height: 95px;
+    width: 100%;
+}
+
+#details H1 {
+    padding-top: 10px;
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+#details h2 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    line-height: 1.2em;
+    font-size: 1.2em;
+}
+
+#class-search{
+    padding: 10px;
+    width: 100%;
+}
+
+#background{
+    background:white;
+    display: flex;
+
+}
+#test2{
+    background: #f9d1d1;
+    height: calc(100vh - 112px);
+}
+#test2-input{
+    width: 50%;
+    padding: 10px;
+}
+#test3{
+    background: #f9d1d1;
+    height: calc(100vh - 112px);
+}
+#tag {
+    height: 60px;
+    width: 100%;
+    display:  flex;
+    align-content: center;
+    justify-content: center;
+
+}
+
+#tag img {
+    margin-top: 10px;
+    height: 50px;
+    margin: 0 20px
+}
+#timeline{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#time {
+    width: 75%
+}
+
+.range-field {
+    margin-top: 0px;
+}
+
+#TimeRange{
+    height:2em;
+    line-height: 2em;
+    text-align: center;
+    margin: 0 10px;
+}
+
+#chat{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background: #ef5350;
+    bottom: 0px;
+    z-index: 10;
 }
