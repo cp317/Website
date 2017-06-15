@@ -14,78 +14,172 @@
 </head>
 
 <body>
+    <nav class="nav-extended ">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a>Login</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a>login</a></li>
+            </ul>
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a class="active" href="#test1">Map</a></li>
+                <li class="tab"><a href="#test2">Class Discovery</a></li>
+                <li class="tab"><a href="#test3">User Discovery</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <div id="test1">
+            <div class="map-container">
+                <div class="description-container">
+                    <div id="search" class="z-depth-1">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Waterloo" id="first_name" type="text" class="validate">
+                                <label for="first_name">City</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Laurier" id="first_name" type="text" class="validate">
+                                <label for="first_name">School</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 l6">
+                                <label>Tags</label>
+                                <select multiple>
+                                    <!-- This would be filled in with an array -->
+                                    <option value="" disabled selected>Select Tags</option>
+                                    <option value="1" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600">Right Tag Square </option>
+                                    <option value="2" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600" class="circle">Right Tag Circle</option>
+                                    <option value="3" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600" class="left">Left Tag Square</option>
+                                    <option value="3" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600" class="left circle">Left Tag Circle</option>
+                                </select>
+                            </div>
+                            <div class="col s12 l6">
+                                <label>Class</label>
+                                <select>
+                                    <!-- This would be filled in with an array -->
+                                    <option value="" disabled selected>Select Tags</option>
+                                    <option value="1">Right Tag Square </option>
+                                    <option value="2">Right Tag Circle</option>
+                                    <option value="3">Left Tag Square</option>
+                                    <option value="3">Left Tag Circle</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- The description cards will be filled by an array(for loop) -->
+
+                    <div id="Card" class="z-depth-1">
+                        <div id="details">
+                            <h1>Wilfrid Laurier University</h1>
+                            <h2>CP317</h2>
+                            <h2>Location</h2>
+                        </div>
+                        <div id="timeline">
+                            <div id=TimeRange> 3pm</div>
+                            <div id="time">
+                                <div class="progress">
+                                    <div class="determinate" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div id=TimeRange> 6pm</div>
+                        </div>
+                        <div id="tag">
+                            <img src="assets/001-burn.png">
+                            <img src="assets/001-burn.png">
+                            <img src="assets/001-burn.png">
+                            <img src="assets/001-burn.png">
+                        </div>
+                    </div>
+                    <div id="Card" class="z-depth-1">
+                        <div id="details">
+                            <h1>Wilfrid Laurier University</h1>
+                            <h2>CP317</h2>
+                            <h2>Location</h2>
+                        </div>
+                        <div id="timeline">
+                            <div id=TimeRange> 3pm</div>
+                            <div id="time">
+                                <div class="progress">
+                                    <div class="determinate" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div id=TimeRange> 6pm</div>
+                        </div>
+                        <div id="tag">
+                            <img src="assets/004-technology.png">
+                            <img src="assets/004-technology.png">
+                            <img src="assets/004-technology.png">
+                            <img src="assets/004-technology.png">
+                        </div>
+                    </div>
+                    <div id="Card" class="z-depth-1">
+                        <div id="details">
+                            <h1>Wilfrid Laurier University</h1>
+                            <h2>CP317</h2>
+                            <h2>Location</h2>
+                        </div>
+                        <div id="timeline">
+                            <div id=TimeRange> 2pm</div>
+                            <div id="time">
+                                <div class="progress">
+                                    <div class="determinate" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div id=TimeRange> 6pm</div>
+                        </div>
+                        <div id="tag">
+                            <img src="assets/002-wifi.png">
+                            <img src="assets/003-computer.png">
+                            <img src="assets/002-wifi.png">
+                            <img src="assets/003-computer.png">
+                        </div>
+                    </div>
+                </div>
+                <div id="map">
+                    <img src="https://i.gyazo.com/3077029b93440c32b92c34e8e39805f7.png" />
+                </div>
+            </div>
+        </div>
+
+        <div id="test2" class="col s12">
+            <div id="class-search">
+                <div id=background class="z-depth-1">
+                    <div id="test2-input">
+                        <div class="input-field">
+                            <input placeholder="Wilfrid Laurier" type="text" class="validate">
+                            <label for="School">School</label>
+                        </div>
+                    </div>
+                    <div id="test2-input">
+                        <div class="input-field">
+                            <input placeholder="cp317" type="text" id="first_name" class="validate">
+                            <label for="Class">Class</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="test3" class="col s12">Test 3</div>
+    </div>
+
+    <div id=chat>
+        chat is going to be done facebookstyle
+    </div>
+
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script src="javascript.js"></script>
 
-
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
-            <a href="#" data-activates="mobile" class="button-collapse search"><i class="material-icons">search</i></a>
-            
-            <ul class="right">
-                <a href="#" data-activates="mobile" class=""><i class="material-icons">perm_identity</i></a>
-            </ul>
-            
-            <ul class="side-nav" id="mobile">
-            </ul>
-        </div>
-    </nav>
-
-
-
-    <div id="main-row" class="row">
-        <div class="main-grid col s12 m6">
-            <div id="search" class="row">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input placeholder="Waterloo" id="first_name" type="text" class="validate">
-                        <label for="first_name">City</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input placeholder="Laurier" id="first_name" type="text" class="validate">
-                        <label for="first_name">School</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 l6">
-                        <label>Tags</label>
-                        <select multiple>
-                            <!-- This would be filled in with an array -->
-                            <option value="" disabled selected>Select Tags</option>
-                            <option value="1" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600">Right Tag Square </option>
-                            <option value="2" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600" class="circle">Right Tag Circle</option>
-                            <option value="3" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600" class="left">Left Tag Square</option>
-                            <option value="3" data-icon="https://poppin.imgix.net/products/swatch/swatch_red.jpg?w=600&h=600" class="left circle">Left Tag Circle</option>
-                        </select>
-                    </div>
-                    <div class="col s12 l6">
-                        <label>Class</label>
-                        <select>
-                            <!-- This would be filled in with an array -->
-                            <option value="" disabled selected>Select Tags</option>
-                            <option value="1">Right Tag Square </option>
-                            <option value="2">Right Tag Circle</option>
-                            <option value="3">Left Tag Square</option>
-                            <option value="3">Left Tag Circle</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- The description cards will be filled by an array(for loop) -->
-            <div id="description" class="row">
-                cards will go here
-            </div>
-        </div>
-        <div class="main-grid col s12 m6">
-            <div id="map">map goes here
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
