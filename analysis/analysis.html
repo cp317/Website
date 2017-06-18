@@ -1,0 +1,73 @@
+<html>
+
+<body>
+    <header>
+        <center>
+            <h1>
+                Study Space
+            </h1>
+            Analysis Document
+            <br> Version 0.0.1 - 06/18/2017
+        </center>
+    </header>
+    <ul>
+        <li><a href="#1.0">1.0 Introduction</a></li>
+
+        <li><a href="#5.0">5.0 Versions</a></li>
+        <li><a href="#6.0">6.0 Authored By</a></li>
+    </ul>
+    <br>
+    <h2><span id="1.0">1. Introduction</span></h2>
+        Study Group Finder is a web-based application that allows students in any university to post and find study group locations. By doing so, students will be able to help each other achieve their academic goals as well as make new acquaintances.
+
+    <h2><span id="2.0">2. Object Classification</span></h2>
+        <h2><span id="2.1">2.1 Entity Objects</span></h2>
+            <u>Host</u>: a User that created a Beacon <br>
+            <u>User</u>: a person that created an account with username and password <br>
+            <u>Guest</u>: a person who does not own an account <br>
+            <u>Profile</u>: a User’s profile they can edit <br>
+            <u>Beacon</u>: a Beacon created by a Host that Users may join <br>
+            <u>ChatDB</u>: a way for users to communicate through text <br>
+            <u>BeaconList</u>: a list of Beacons
+
+        <h2><span id="2.2">2.2 Boundry Objects</span></h2>
+            <u>GuestLoginView</u>: Where the guest can login and become a User or remain a Guest <br>
+            <u>GuestUserCreationView</u>: Window where guest can create an account with email and password <br>
+            <u>GuestPageView</u>: The page a Guest sees when entering website <br>
+            <u>UserPageView</u>: The page a User would see upon login <br>
+            <u>BeaconCreationView</u>: Where a User can create a Beacon by entering location and course code
+            then becomes a Host to that Beacon <br>
+            <u>BeaconFailedJoinView</u>: window shown when joining beacon has failed <br>
+            <u>HostView</u>: window that the Host can only see <br>
+            <u>HostBeaconControlView</u>: beacon controls for the Beacons Host <br>
+            <u>BeaconChatWindowView</u>: a Chat including all Users and Guests in that Beacon <br>
+            <u>FilterBeaconView</u>: window where Users can filter Beacons through classes <br>
+            <u>BeaconListView</u>: shows the BeaconList <br>
+            <u>ProfileWindow</u>: Displays a Users profile <br>
+            <u>UserPrivateChatView</u>: a Chat between two users <br>
+            <u>EditProfileView</u>: a window where Users can edit their Profile <br>
+            <u>LogoutView</u>: logout window for Users
+        <h2><span id="2.3">2.3 Control Objects</span></h2>
+
+            <u>JoinChat</u>: controller to join a chat<br>
+            <u>SendMsg</u>: coordinates sending a message<br>
+            <u>ChangeToHost</u>: changes user to host<br>
+            <u>BackToSearch</u>: redirects back to searchwindow after a failed search<br>
+            <u>DisplayResults</u>: displays results of a search<br>
+            <u>JoinBeacon</u>: coordinates joining a beacon<br>
+            <u>ApplySearchFilters</u>: applies filters to beaconlist<br>
+            <u>LeaveChat</u>: User leaves Chat<br>
+            <u>ProfileSearch</u>: filters profiles by User<br>
+            <u>CreateBeacon</u>: creates the beacon<br>
+            <u>ValidateBeacon</u>: validates beacon creation<br>
+            <u>RelocateBeacon</u>: allows Host to relocate a beacon<br>
+            <u>FailedCreation</u>: notifies Host of failed beacon creation<br>
+            <u>CloseBeacon</u>: allows Host to close the beacon<br>
+            <u>ExtendBeacon</u>: allows Host to extend the time of their beacon<br>
+            <u>RegisterBeacon</u>: Registers beacon to BeaconList
+
+    <h2><span id="3.0">3. Diagrams</span></h2>
+        
+</body>
+
+</html>
