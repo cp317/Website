@@ -5,7 +5,7 @@ https://cp317.github.io/Website/
 # Schedule
 
 ## <u>Analysis:</u>
-- [ ] Write up for existing features - <b>Monday June 12</b>
+- [x] Write up for existing features - <b>Monday June 12</b>
 - [ ] Diagrams for new features - <b>Wednesday June 14</b>
 
 ## <u>Requirements:</u>
