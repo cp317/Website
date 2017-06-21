@@ -31,17 +31,19 @@ nav {
 }
 
 #map {
-    z-index: -1;
-    height: 100%;
-    width: 50%;
+    /*z-index: -1;*/
+    /*height: 100%;*/
+
+    /*height: 600px;*/
+    width: 100%;
 }
 
-#map img {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/*#map img {*/
+    /*display: flex;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*object-fit: cover;*/
+/*}*/
 
 .content {
     padding-top: 112px;
