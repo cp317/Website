@@ -1,5 +1,7 @@
 <html>
-
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "requirements_styles.css">
 <body>
     <header>
         <center>
@@ -7,57 +9,58 @@
                 Study Space
             </h1>
             Requirements Document
-            <br>Version 1.7 - 6/27/2017
+            <br>Version 1.8 - 6/28/2017
         </center>
     </header>
     <ul>
-        <li><a href="#1.0">1.0 Introduction</a></li>
+        <li><a href="#1.0">Introduction</a>
         <ul>
-            <li><a href="#1.1">1.1 Purpose</a></li>
-            <li><a href="#1.2">1.2 Scope</a></li>
-            <li><a href="#1.3">1.3 Document Lexicon</a></li>
+            <li><a href="#1.1">Purpose</a></li>
+            <li><a href="#1.2">Scope</a></li>
+            <li><a href="#1.3">Document Lexicon</a>
             <ul>
-                <li><a href="#1.3.1">1.3.1 Definitions</a>
-                <li><a href="#1.3.2">1.3.2 Acronyms and Abbreviations</a></li>
-            </ul>
-            <li><a href="#1.4">1.4 References</a></li>
-            <li><a href="#1.5">1.5 Overview</a></li>
-        </ul>
-        <li><a href="#2.0">2.0 Overall Description</a></li>
+                <li><a href="#1.3.1">Definitions</a></li>
+                <li><a href="#1.3.2">Acronyms and Abbreviations</a></li>
+            </ul></li>
+            <li><a href="#1.4">References</a></li>
+            <li><a href="#1.5">Overview</a></li>
+        </ul></li>
+        <li><a href="#2.0">Overall Description</a>
         <ul>
-            <li><a href="#2.1">2.1 Product Perspective</a></li>
+            <li><a href="#2.1">Product Perspective</a>
             <ul>
-                <li><a href="#2.1.1">2.1.1 User Interfaces</a></li>
-            </ul>
-            <li><a href="#2.2">2.2 Product Functions</a></li>
-            <li><a href="#2.3">2.3 User Characteristics</a></li>
-            <li><a href="#2.4">2.4 Constraints</a></li>
-            <li><a href="#2.5">2.5 Assumptions and Dependencies</a></li>
-        </ul>
-        <li><a href="#3.0">3.0 Specific Requirements</a></li>
+                <li><a href="#2.1.1">User Interfaces</a></li>
+				<li><a href="#2.1.2">Sample GUI</a></li>
+            </ul></li>
+            <li><a href="#2.2">Product Functions</a></li>
+            <li><a href="#2.3">User Characteristics</a></li>
+            <li><a href="#2.4">Constraints</a></li>
+            <li><a href="#2.5">Assumptions and Dependencies</a></li>
+        </ul></li>
+        <li><a href="#3.0">Specific Requirements</a>
         <ul>
-            <li><a href="#3.1">3.1 External Interfaces</a></li>
-            <li><a href="#3.2">3.2 Functions</a></li>
-            <li><a href="#3.3">3.3 Logical Database Requirements</a></li>
-            <li><a href="#3.4">3.4 Portability</a></li>
-        </ul>
-        <li><a href="#4.0">4.0 Optional Features</a></li>
-        <li><a href="#5.0">5.0 Versions</a></li>
-        <li><a href="#6.0">6.0 Authored By</a></li>
+            <li><a href="#3.1">External Interfaces</a></li>
+            <li><a href="#3.2">Functions</a></li>
+            <li><a href="#3.3">Logical Database Requirements</a></li>
+            <li><a href="#3.4">Portability</a></li>
+        </ul></li>
+        <li><a href="#4.0">Optional Features</a></li>
+        <li><a href="#5.0">Versions</a></li>
+        <li><a href="#6.0">Authored By</a></li>
     </ul>
     <br>
-	<h2><span id="1.0">1. Introduction</span></h2>
+	<h2><span id="1.0">Introduction</span></h2>
 	Study Group Finder is a web-based application that allows students in any university to post and find study group locations. The purpose of this application is to allow students to find study groups with ease. By doing so, students are able to help each other achieve their academic goals as well as make new acquaintances.
 
-		<h3><span id="1.1">1.1 Purpose </span></h3>
+		<h3><span id="1.1">Purpose </span></h3>
 		This document outlines the requirements of the Study Group Finder application and describes its features. During the creation of the application, everyone involved refers to this document to understand the requirements as well as use it as the basis for their work.
 
-		<h3><span id="1.2">1.2 Scope</span></h3>
+		<h3><span id="1.2">Scope</span></h3>
 		The software being produced is a website called Study Group Finder. This software is used by students to search for and message people nearby who are studying or doing homework. The objective is to bring students together so they may more easily achieve their academic goals.
 
-		<h3><span id="1.3">1.3 Document Lexicon</span></h3>
+		<h3><span id="1.3">Document Lexicon</span></h3>
 		
-			<h4><span id="1.3.1">1.3.1 Definitions</span></h4>
+			<h4><span id="1.3.1">Definitions</span></h4>
 				<u>Arrival Time</u>: The time the Beacon creator will arrive at the study location.
 				<br>
 				<u>Beacon</u>: A study location and the details of that study group, such as the course code, location, and start time of the study session.
@@ -86,44 +89,44 @@
 				<br>
 				<u>User Profile</u>: A page with personal details about the assumed student.  The profile provides functionality such as beacon invites, messaging, and course lists.
 				
-			<h4><span id="1.3.2">1.3.2 Acronyms and Abbreviations</span></h4>
+			<h4><span id="1.3.2">Acronyms and Abbreviations</span></h4>
 				<u>SRS</u>: Software Requirements Specifications. This is the document which has all requirements and standards contained.
 				<br>
 				<u>GUI</u>: Graphical User Interface. This is the interface which the user interacts with. It consists of traditional buttons and bars as well as more unique graphics, such as the map.
 		
-		<h3><span id="1.4">1.4 References</span></h3>
+		<h3><span id="1.4">References</span></h3>
 		This SRS document is based on IEEE Std 830-1998.
 	   
-		<h3><span id="1.5">1.5 Overview</span></h3>
+		<h3><span id="1.5">Overview</span></h3>
 		The rest of this document contains details on the appearance and functionality of the Study Group Finder program.
 	
-	<h2><span id="2.0">2. Overall Description</span></h2>
+	<h2><span id="2.0">Overall Description</span></h2>
 	
-		<h3><span id="2.1">2.1 Product Perspective</span></h3>
+		<h3><span id="2.1">Product Perspective</span></h3>
 		Study Group Finder is a web based application with two major components: front end and back end. It also implements the Leaflet / Google Maps API in order to display a map to the user. It takes input from the user to determine relevant beacons to display to them.
 
-			<h4><span id="2.1.1">2.1.1 User Interfaces</span></h4>
+			<h4><span id="2.1.1">User Interfaces</span></h4>
 			<p>The main view has a map taking up the right side of the web application. The left half of the display has three filters at the top, which can be used to sort based on location, school name, and course code. Below that, there is a scrollable list displaying boxes showing detailed information of all the nearby beacons. These boxes are ordered by arrival time and include various details including departure time, room number and users present. There is a chat box for each beacon, which is initially hidden but can be opened by the user. In the top right of the screen, there is a button that brings a window for the user to login or register an account. This window also includes the option for a user to reset their password if they have forgotten it. Notifications and invites appear in the same fashion as chat boxes. </p>
 			<p>Each user has a profile, which displays information such as the courses they are enrolled in or a brief description about themselves. While the default view has the map on the right side of the screen, the user is able to change the view to show a list of courses at their school or a list of user profiles of other people in their courses. Clicking a course from the course list takes them to the course page, which includes details about the course and a chat box. Clicking a profile from the user list takes the user to that user's profile. </p>
 			
-			<h4>Sample GUI</h4>
+			<h4><span id="2.1.2">Sample GUI</h4>
 			<img src="Sample-GUI.png" alt="Sample GUI Image" style="width:1130;height:636;">
 
-		<h3><span id="2.2">2.2 Product Functions</span></h3>
+		<h3><span id="2.2">Product Functions</span></h3>
 		Every user has the option to create a group or join a group. When a user creates a group they specify attributes of the group, such as the course code, where the group is located, and how long the group will be there.  If a user is registered for the same course, they receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they are able to select a group by looking at a map or by scrolling through a list of nearby beacons. The user is able to search for nearby groups by location, and filter these groups by the university they attend and the course code/course page of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users have the option to register an account and sign in to the website, which allows them to view and edit their beacons from any device they sign in with. Users are able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon.  Users are able to view the user profiles of other users, which allows them to invite users to their beacon or start a private chat with the user. Users are also able to view a course page for each course, which contains user submitted information about the course, and also includes a chat. 
 		
-		<h3><span id="2.3">2.3 User Characteristics</span></h3>
+		<h3><span id="2.3">User Characteristics</span></h3>
 		The intended audience are post-secondary students with the technical expertise to use a website. High school students could also use this product as well.
 
-		<h3><span id="2.4">2.4 Constraints</span></h3>
+		<h3><span id="2.4">Constraints</span></h3>
 		Multiple users must be able to access the website at once. To ensure the website feels responsive, the map of nearby beacons should update within a second whenever a user changes their parameters.
 
-		<h3><span id="2.5">2.5 Assumptions and Dependencies</span></h3>
+		<h3><span id="2.5">Assumptions and Dependencies</span></h3>
 		Users are assumed to have a functioning web-capable device with a browser that is compatible with Leaflet/Google Maps. They are expected to have an internet connection until they enter their parameters and relevant Beacons are displayed. Once they have loaded their nearby Beacons, they should be able to disconnect from the internet and still view them, so they can check a Beacon’s description while they are traveling to it. This application should function on any operating system.
 
-	<h2><span id="3.0">3. Specific Requirements</span></h2>
+	<h2><span id="3.0">Specific Requirements</span></h2>
 	
-		<h3><span id="3.1">3.1 External Interfaces</span></h3>
+		<h3><span id="3.1">External Interfaces</span></h3>
 		
 		<ul>
 			<li>The location entered by the user is both used as a filter, or if they make their own beacon, serves as their location. It finds nearby beacons or serve as the location for its own beacon. The user is able to search for their location using the Leaflet/Google Maps API.</li>
@@ -139,7 +142,7 @@
 			<li>The course page allows users to view details on their course submitted by other users. Some details present include exam details, sections, and other pertinent information to the course. The course page also includes a chat for people to discuss the course.</li>
 		</ul>
 		
-		<h3><span id="3.2">3.2 Functions</span></h3>
+		<h3><span id="3.2">Functions</span></h3>
     <ul>
 			<li>The system shall ensure that when a user attempts to create a beacon they have not left the location, school name, course code, arrival time, or departure time fields blank.</li>
 			<li>If the Leaflet/Google Maps API cannot determine the position of their location based on their input, it is not accepted.</li> 
@@ -152,7 +155,7 @@
 			<li>When a user attempts to register their account, their email address must be of an acceptable format, specifically “*@*.*”, where “*” is a wildcard for a varying amount of characters. The two passwords they enter must be identical, or a message is displayed saying they are not. Until they have entered a valid email address and the two password fields are identical, they are not able to create an account.</li>
 		</ul>
 		
-		<h3><span id="3.3">3.3 Logical Database Requirements</span></h3>
+		<h3><span id="3.3">Logical Database Requirements</span></h3>
 		<p>The <b>user</b> table includes exactly one row for each user. Each user has their own distinct primary key, referred to as the user key. The other columns in this table include the user’s email address and encrypted password. </p>
 		
 		<p>The <b>course</b> table includes exactly one row for each course, and contains the course code and user-entered details about the course. The course code is the primary key, and it also includes a chat key from the <b>chat</b> table, so that the course page can retrieve the chat messages associated with the course page.</p>
@@ -161,10 +164,10 @@
 		
 		<p>The <b>chat</b> table includes one row for every chat message sent. The primary key is a chat key, which refers to either the beacon, course page, or private discussion where the chat occurs. Specifically, each beacon, course page, or private discussion has exactly one unique chat key, which is associated with every message in that chat. The <b>chat</b> table also includes a string containing the text of the message, the time the message was sent, and the user key of the user who sent the message as a foreign key from the <b>user</b> table. </p>
 
-		<h3><span id="3.4">3.4 Portability</span></h3>
+		<h3><span id="3.4">Portability</span></h3>
 		We must create the application to be accessible on all devices, both mobile and desktop. This means it must be able to be accessed on Windows, Mac OS, and Linux devices. There is no mobile version of the web site. Because of the application’s web based nature, it is also necessary to make it work flawlessly on all browsers which are most commonly used, including Google Chrome, Firefox, Safari, and Internet Explorer (version 8.0+). 
 	
-	<h2><span id="4.0">4. Optional Features</span></h2>
+	<h2><span id="4.0">Optional Features</span></h2>
 	The basic functions that our application must include are outlined in Section 2.2. In addition to those features, there are other functions we hope to include. However, due to time constraints, these functions may not be included in the final product. Listed below are these additional features:
 	<ul>
 		<li>Getting user profile icons using their email address</li>
@@ -176,111 +179,122 @@
 		<li>Automatically open at user’s location / automatically move to school’s location</li>
 	</ul>
 	
-	<h2><span id="5.0">5. Versions</span></h2>
-	<h3>Version 0.1 - 5/5/2017</h3>
+	<h2><span id="5.0">Versions</span></h2>
+	<h5>Version 0.1 - 5/5/2017</h5>
 	<i>Document outline created</i>
 	<ul>
-	<li>Jake Loftus</li>
+	<li>- Jake Loftus</li>
 	</ul>
 
-	<h3>Version 1.0 - 5/15/2017</h3>
+	<h5>Version 1.0 - 5/15/2017</h5>
 	<i>Sections modified and expanded</i>
 		<ul>
-		<li>Jake Loftus</li>
-		<li>Sheldon Van Middelkoop</li>
-		<li>Andrew Fong</li>
-		<li>Amelia Lee</li>
+		<li>- Jake Loftus</li>
+		<li>- Sheldon Van Middelkoop</li>
+		<li>- Andrew Fong</li>
+		<li>- Amelia Lee</li>
 		</ul>
 
-	<h3>Version 1.1 - 5/17/2017</h3>
+	<h5>Version 1.1 - 5/17/2017</h5>
 	<i>Adjusted document based on SQA suggestions</i>
 		<ul>
-		<li>Jake Loftus</li>
-		<li>Amelia Lee</li>
-		<li>Sheldon Van Middelkoop</li>
+		<li>- Jake Loftus</li>
+		<li>- Amelia Lee</li>
+		<li>- Sheldon Van Middelkoop</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>Mitchell Marino</li>
-		<li>Gareth John Sharpe</li>
-		<li>Minji Kang</li>
-		<li>Rishhi Balakrishnan</li>
+		<li>- Mitchell Marino</li>
+		<li>- Gareth John Sharpe</li>
+		<li>- Minji Kang</li>
+		<li>- Rishhi Balakrishnan</li>
 		</ul>
 
-	<h3>Version 1.2 - 5/20/2017</h3>
-	<i>Adjusted document based on David Brown’s suggestions</i>
+	<h5>Version 1.2 - 5/20/2017</h5>
+	<i>Adjusted document based on David Brown's suggestions</i>
 		<ul>
-		<li>Jake Loftus</li>
-		<li>Sheldon Van Middelkoop</li>
+		<li>- Jake Loftus</li>
+		<li>- Sheldon Van Middelkoop</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>David Brown</li>
-		<li>Gareth John Sharpe</li>
+		<li>- David Brown</li>
+		<li>- Gareth John Sharpe</li>
 		</ul>
 
-	<h3>Version 1.3 - 5/24/2017</h3>
+	<h5>Version 1.3 - 5/24/2017</h5>
 	<i>Adjusted document based on SQA suggestions</i>
 		<ul>
-		<li>Jake Loftus</li>
+		<li>- Jake Loftus</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>Minji Kang</li>
+		<li>- Minji Kang</li>
 		</ul>
 		
-<h3>Version 1.4 - 6/1/2017</h3>
+<h5>Version 1.4 - 6/1/2017</h5>
 	<i>Added additional requirements, specifically the user login functionality</i>
 		<ul>
-		<li>Jake Loftus</li>
+		<li>- Jake Loftus</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>Amnah Alahmadi</li>
+		<li>- Amnah Alahmadi</li>
 		</ul>
 		
-<h3>Version 1.5 - 6/14/2017</h3>
+<h5>Version 1.5 - 6/14/2017</h5>
 	<i>Added additional requirements, specifically the chat functionality, user profiles, and course pages</i>
 		<ul>
-		<li>Jake Loftus</li>
-		<li>Andrew Fong</li>
-		<li>Amelia Lee</li>
+		<li>- Jake Loftus</li>
+		<li>- Andrew Fong</li>
+		<li>- Amelia Lee</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>Jonathan Wu</li>
+		<li>- Jonathan Wu</li>
 		</ul>
 		
-<h3>Version 1.6 - 6/16/2017</h3>
+<h5>Version 1.6 - 6/16/2017</h5>
 	<i>Adjusted document based on SQA suggestions</i>
 		<ul>
-		<li>Jake Loftus</li>
-		<li>Andrew Fong</li>
+		<li>- Jake Loftus</li>
+		<li>- Andrew Fong</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>Gareth John Sharpe</li>
-		<li>Mark Kokanovic</li>
-		<li>Tala Abuadas</li>
-		<li>Amnah Alahmadi</li>
+		<li>- Gareth John Sharpe</li>
+		<li>- Mark Kokanovic</li>
+		<li>- Tala Abuadas</li>
+		<li>- Amnah Alahmadi</li>
 		</ul>
 		
-<h3>Version 1.7 - 6/27/2017</h3>
+<h5>Version 1.7 - 6/27/2017</h5>
 	<i>Adjusted document based on David Brown's feedback</i>
 		<ul>
-		<li>Jake Loftus</li>
+		<li>- Jake Loftus</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>David Brown</li>
+		<li>- David Brown</li>
+		</ul>
+		
+<h5>Version 1.8 - 6/28/2017</h5>
+	<i>Added CSS to dynamically number sections of document</i>
+		<ul>
+		<li>- Jasmaan Panesar</li>
+		</ul>
+	<i>Thanks to SQA by</i>
+		<ul>
+		<li>- David Brown</li>
 		</ul>
 	
-	<h2><span id="6.0">6. Authored By</span></h2>
+	<h2><span id="6.0">Authored By</span></h2>
 	<ul>
-		<li>Jake Loftus</li>
-		<li>Sheldon Van Middelkoop</li>
-		<li>Andrew Fong</li>
-		<li>Amelia Lee</li>
+		<li>- Jake Loftus</li>
+		<li>- Sheldon Van Middelkoop</li>
+		<li>- Andrew Fong</li>
+		<li>- Amelia Lee</li>
 	</ul>
 </body>
+</link>
 </html>
