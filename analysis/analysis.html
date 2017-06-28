@@ -1,29 +1,44 @@
 <html>
-
+<link rel="stylesheet" type="text/css" href="analysis_styles.css">
 <body>
     <header>
         <center>
             <h1>
                 Study Space
-            </h1>
+				</h1>
             Analysis Document
-            <br> Version 0.0.2 - 06/18/2017
+            <br> Version 0.0.3 - 06/28/2017
         </center>
     </header>
-    <ul>
-        <li><a href="#1.0">1.0 Introduction</a></li>
-		<li><a href="#2.0">2.0 Object Classification</a></li>
-		<li><a href="#3.0">3.0 Diagrams</a></li>
-
-        <li><a href="#5.0">5.0 Versions</a></li>
-        <li><a href="#6.0">6.0 Authored By</a></li>
-    </ul>
+	<span style="font-size:150%;">
+    <ol>
+		<li><a href="#1.0">Introduction</a></li>
+		<li><a href="#2.0">Object Classification</a>
+			<ol>
+				<li><a href="#2.1">Entity Objects</a></li>
+				<li><a href="#2.2">Boundry Objects</a></li>
+				<li><a href="#2.3">Control Objects</a></li>
+			</ol>
+		</li>
+		<li><a href="#3.0">Diagrams</a>
+			<ol>
+				<li><a href="#3.1">Class Diagram</a></li>
+				<li><a href="#3.2">Robustness Diagrams</a></li>
+				<li><a href="#3.3">Sequence Diagrams</a></li>
+				<li><a href="#3.4">State Diagram</a></li>
+				<li><a href="#3.5">Use Case Diagram</a></li>
+			</ol>
+		</li>
+        <li><a href="#4.0">Versions</a></li>
+        <li><a href="#5.0">Authored By</a></li>
+    </ol>
+	</span>
     <br>
-    <h2><span id="1.0">1. Introduction</span></h2>
+    <h2><span id="1.0">Introduction</span></h2>
         Study Group Finder is a web-based application that allows students in any university to post and find study group locations. By doing so, students will be able to help each other achieve their academic goals as well as make new acquaintances.
 
-    <h2><span id="2.0">2. Object Classification</span></h2>
-        <h2><span id="2.1">2.1 Entity Objects</span></h2>
+    <h2><span id="2.0">Object Classification</span></h2>
+        <h3><span id="2.1">Entity Objects</span></h3>
             <u>Host</u>: a User that created a Beacon <br>
             <u>User</u>: a person that created an account with username and password <br>
             <u>Guest</u>: a person who does not own an account <br>
@@ -32,7 +47,7 @@
             <u>ChatDB</u>: a way for users to communicate through text <br>
             <u>BeaconList</u>: a list of Beacons
 
-        <h2><span id="2.2">2.2 Boundry Objects</span></h2>
+        <h3><span id="2.2">Boundry Objects</span></h3>
             <u>GuestLoginView</u>: Where the guest can login and become a User or remain a Guest <br>
             <u>GuestUserCreationView</u>: Window where guest can create an account with email and password <br>
             <u>GuestPageView</u>: The page a Guest sees when entering website <br>
@@ -49,7 +64,7 @@
             <u>UserPrivateChatView</u>: a Chat between two users <br>
             <u>EditProfileView</u>: a window where Users can edit their Profile <br>
             <u>LogoutView</u>: logout window for Users
-        <h2><span id="2.3">2.3 Control Objects</span></h2>
+        <h3><span id="2.3">Control Objects</span></h3>
 
             <u>JoinChat</u>: controller to join a chat<br>
             <u>SendMsg</u>: coordinates sending a message<br>
@@ -68,42 +83,48 @@
             <u>ExtendBeacon</u>: allows Host to extend the time of their beacon<br>
             <u>RegisterBeacon</u>: Registers beacon to BeaconList
 
-    <h2><span id="3.0">3. Diagrams</span></h2>
+    <h2><span id="3.0">Diagrams</span></h2>
 
-	<h3>Class Diagram</h3>
-	<img src="./diagrams/class_diagram.PNG">
-	<h3>Robustness Diagrams</h3>
-	<img src="./diagrams/robustness_diagram1.PNG">
-	<img src="./diagrams/robustness_diagram2.PNG">
-	<img src="./diagrams/robustness_diagram3.PNG">
-	<h3>Sequence Diagrams</h3>
-	<img src="./diagrams/sequence_diagram1.PNG">
-	<img src="./diagrams/sequence_diagram2.PNG">
-	<img src="./diagrams/sequence_diagram3.PNG">
-	<img src="./diagrams/sequence_diagram4.PNG">
-	<h3>State Diagram</h3>
-	<img src="./diagrams/state_diagram.PNG">
-	<h3>Use Case Diagram</h3>
-	<img src="./diagrams/use_case_diagram.PNG">
+		<h3><span id="3.1">Class Diagram</span></h3>
+		<img src="./diagrams/class_diagram.PNG">
+		<h3><span id="3.2">Robustness Diagrams</span></h3>
+		<img src="./diagrams/robustness_diagram1.PNG">
+		<img src="./diagrams/robustness_diagram2.PNG">
+		<img src="./diagrams/robustness_diagram3.PNG">
+		<h3><span id="3.3">Sequence Diagrams</span></h3>
+		<img src="./diagrams/sequence_diagram1.PNG">
+		<img src="./diagrams/sequence_diagram2.PNG">
+		<img src="./diagrams/sequence_diagram3.PNG">
+		<img src="./diagrams/sequence_diagram4.PNG">
+		<h3><span id="3.4">State Diagram</span></h3>
+		<img src="./diagrams/state_diagram.PNG">
+		<h3><span id="3.5">Use Case Diagram</span></h3>
+		<img src="./diagrams/use_case_diagram.PNG">
 	<br>
-	<h2><span id="5.0">5. Versions</span></h2>
-    <h3>Version 0.0.1 - 06/18/2017</h3>
-	<i>HTML Document created</i>
-	<ul>
-	<li>Jonathan Wu</li>
-	</ul>  
-	<h3>Version 0.0.2 - 06/18/2017</h3>
-	<i>Diagrams Embedded as PNG, fixes and improvements</i>
-	<ul>
-	<li>Alex Yang</li>
-	</ul>
-	<h2><span id="6.0">6. Authored By</span></h2>
-	<ul>
-		<li>insert_name</li>
-		<li>insert_name</li>
-		<li>insert_name</li>
-		<li>insert_name</li>
-	</ul>
+	
+	<h2><span id="4.0">Versions</span></h2>
+		<h4>Version 0.0.1 - 06/18/2017</h4>
+		<i>HTML Document created</i>
+		<ul>
+		<li>Jonathan Wu</li>
+		</ul>  
+		<h4>Version 0.0.2 - 06/18/2017</h4>
+		<i>Diagrams Embedded as PNG, fixes and improvements</i>
+		<ul>
+		<li>Alex Yang</li>
+		</ul>
+		<h4>Version 0.0.3 - 06/28/2017</h4>
+		<i>Implemented dynamic header and subheader numbering</i>
+		<ul>
+		<li>Alex Yang</li>
+		</ul>
+	<h2><span id="5.0">Authored By</span></h2>
+		<ul>
+			<li>insert_name</li>
+			<li>insert_name</li>
+			<li>insert_name</li>
+			<li>insert_name</li>
+		</ul>
 </body>
-
+</link>
 </html>
