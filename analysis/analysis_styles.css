@@ -15,3 +15,12 @@ h3:before {
     counter-increment: subsection;
     content: counter(section) "." counter(subsection) " ";
 }
+ul {
+  counter-reset: listsection;                
+  list-style-type: none;
+}
+
+li::before {
+  counter-increment: listsection;            
+  content: counters(listsection, ".") " ";   
+}
