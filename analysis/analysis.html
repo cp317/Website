@@ -16,8 +16,9 @@
 		<li><a href="#2.0">Object Classification</a>
 			<ul>
 				<li><a href="#2.1">Entity Objects</a></li>
-				<li><a href="#2.2">Boundry Objects</a></li>
-				<li><a href="#2.3">Control Objects</a></li>
+				<li><a href="#2.2">Entity Objects</a></li>
+				<li><a href="#2.3">Boundry Objects</a></li>
+				<li><a href="#2.4">Control Objects</a></li>
 			</ul>
 		</li>
 		<li><a href="#3.0">Diagrams</a>
@@ -38,16 +39,25 @@
         Study Group Finder is a web-based application that allows students in any university to post and find study group locations. By doing so, students will be able to help each other achieve their academic goals as well as make new acquaintances.
 
     <h2><span id="2.0">Object Classification</span></h2>
-        <h3><span id="2.1">Entity Objects</span></h3>
+	
+	<h3><span id="2.1">Class Objects</span></h3>
             <u>Host</u>: a User that created a Beacon <br>
-            <u>User</u>: a person that created an account with username and password <br>
+            <u>RegisteredUser</u>: a person that created an account with username and password <br>
             <u>Guest</u>: a person who does not own an account <br>
             <u>Profile</u>: a User’s profile they can edit <br>
             <u>Beacon</u>: a Beacon created by a Host that Users may join <br>
+	    <u>Course</u>: a Course profile <br>
+	    <u>BeaconChat</u>: A chat attached to a beacon <br>
+	    <u>PrivateChat</u>: a chat between users <br>
+	    <u>Message</u>: a message sent to a chat by a user <br>
+	
+        <h3><span id="2.2">Entity Objects</span></h3>
+	    <u>CourseDB</u>: a list of Courses <br>
+            <u>UserDB</u>: a list of users signed up on the service <br>
             <u>ChatDB</u>: a way for users to communicate through text <br>
             <u>BeaconList</u>: a list of Beacons
 
-        <h3><span id="2.2">Boundry Objects</span></h3>
+        <h3><span id="2.3">Boundry Objects</span></h3>
             <u>GuestLoginView</u>: Where the guest can login and become a User or remain a Guest <br>
             <u>GuestUserCreationView</u>: Window where guest can create an account with email and password <br>
             <u>GuestPageView</u>: The page a Guest sees when entering website <br>
@@ -64,7 +74,7 @@
             <u>UserPrivateChatView</u>: a Chat between two users <br>
             <u>EditProfileView</u>: a window where Users can edit their Profile <br>
             <u>LogoutView</u>: logout window for Users
-        <h3><span id="2.3">Control Objects</span></h3>
+        <h3><span id="2.4">Control Objects</span></h3>
 
             <u>JoinChat</u>: controller to join a chat<br>
             <u>SendMsg</u>: coordinates sending a message<br>
