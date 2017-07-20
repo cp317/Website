@@ -1,9 +1,11 @@
 # Coding Standards
 
 ## <u>Naming Conventions:</u>
-* We will use <i>lowerCamelCase</i> for variable names i.e. beaconName = "Laurier";
-* We will use <i>PascalCase</i> for function names. i.e. function FunctionName()
-* Function names have to be descriptive. i.e Don't name a function that creates a beacon "Banana". Use "CreateBeacon".
+* We will use <i>PascalCase</i> for class names i.e. class RegisteredUser.
+* We will use <i>lowerCamelCase</i> for variable names i.e. beaconName = "Laurier";.
+* We will use the class name for constructor functions i.e. class RegisteredUser will have a constructor named RegisteredUser.
+* We will use <i>lowerCamelCase</i> for all other function names. i.e. function functionName().
+* Function names have to be descriptive. i.e Don't name a function that creates a beacon "banana". Use "createBeacon".
 * We will use <i>UPPERCASE</i> for global variables and constants.
 
 ## <u>Spacing:</u>
