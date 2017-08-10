@@ -9,7 +9,11 @@
                 Study Space
             </h1>
             Requirements Document
+<<<<<<< HEAD
             <br>Version 2.0 - 8/9/2017
+=======
+            <br>Version 1.9 - 8/8/2017
+>>>>>>> 1ec22a4c0b152bd362a6500d7195e886e7d9dd1c
         </center>
     </header>
     <ul>
@@ -50,13 +54,17 @@
     </ul>
     <br>
 	<h2><span id="1.0">Introduction</span></h2>
+<<<<<<< HEAD
 	Study Group Finder is a web-based application that allows students in any school to post and find study group locations. The purpose of this application is to allow students to find study groups with ease. By doing so, students are able to help each other achieve their academic goals as well as make new acquaintances.
+=======
+	Study Space is a web-based application that allows students in any university to post and find study group locations. The purpose of this application is to allow students to find study groups with ease. By doing so, students are able to help each other achieve their academic goals as well as make new acquaintances.
+>>>>>>> 1ec22a4c0b152bd362a6500d7195e886e7d9dd1c
 
 		<h3><span id="1.1">Purpose </span></h3>
-		This document outlines the requirements of the Study Group Finder application and describes its features. During the creation of the application, everyone involved refers to this document to understand the requirements as well as use it as the basis for their work.
+		This document outlines the requirements of the Study Space application and describes its features. During the creation of the application, everyone involved refers to this document to understand the requirements as well as use it as the basis for their work.
 
 		<h3><span id="1.2">Scope</span></h3>
-		The software being produced is a website called Study Group Finder. This software is used by students to search for and message people nearby who are studying or doing homework. The objective is to bring students together so they may more easily achieve their academic goals.
+		The software being produced is a website called Study Space. This software is used by students to search for and message people nearby who are studying or doing homework. The objective is to bring students together so they may more easily achieve their academic goals.
 
 		<h3><span id="1.3">Document Lexicon</span></h3>
 		
@@ -101,17 +109,31 @@
 		This SRS document is based on IEEE Std 830-1998.
 	   
 		<h3><span id="1.5">Overview</span></h3>
-		The rest of this document contains details on the appearance and functionality of the Study Group Finder program.
+		The rest of this document contains details on the appearance and functionality of the Study Space program.
 	
 	<h2><span id="2.0">Overall Description</span></h2>
 	
 		<h3><span id="2.1">Product Perspective</span></h3>
+<<<<<<< HEAD
 		Study Group Finder is a web based application with two major components: front end and back end. It also implements the Google Maps API in order to display a map to the user. It takes input from the user to determine relevant beacons to display to them.
 
 			<h4><span id="2.1.1">User Interfaces</span></h4>
 			<p>The main view has a map taking up the right side of the web application. The left half of the display has three search bars at the top, which can be used to sort based on location, school name, and course code. There will also be a series of tags for the user to further filter the beacons. Below that, there is a scrollable list displaying boxes showing detailed information of all the nearby beacons. These boxes are ordered by their distance from the user and includes various details including end time, room number, and the course code. There is a chat box for each beacon, which is initially hidden but can be opened by the user. In the top right of the screen, there is a button that brings a window for the user to login or register an account. This window also includes the option for a user to reset their password if they have forgotten it. Notifications and invites appear in the same fashion as chat boxes. </p>
 			<p>Each user has a profile, which displays information such as the courses they are enrolled in and a brief description about themselves. The user is able to change the view to show a list of courses at their school or a list of user profiles of other people in their courses. Clicking a profile from the user list takes the user to that user's profile. While viewing the user's profile, they are able to invite the user to a beacon or start a chat with the user.</p>
 			
+=======
+		Study Space is a web based application with two major components: front end and back end. It also implements the Google Maps API in order to display a map to the user. It takes input from the user to determine relevant beacons to display to them.
+
+			<h4><span id="2.1.1">User Interfaces</span></h4>
+			<p>The user interface consists of 6 main windows.  These include the Home Window, Login Window, Beacon Creation Window, User Discovery Window, Chat Window. Initially, when a user accesses the site, they will be in the Home Window.</p>
+			<p>The Home Window has a map on the right side, which allows you to view and select beacon locations.  It has fields for the user to input school, course ID, location, date/time, and tags.  Along the left side, there are two lists, including a My Beacons list and a Suggested Beacons list.  Each Beacon includes details such as date, course code, location, and tags.  It includes a timer bar which advances from left to right and changes from green to red as the Beacon gets closer to starting. If the Beacon is in My Beacons, the button will read Remove Beacon.  If the Beacon is in Suggested Beacons, the button will read Join Beacon.  Two tabs, Map and User Discovery are on the top </p>
+			<p>The Login Window has two fields along the left which allow registered users to enter their username and password then Press a Login button.  There is also a Remember Me checkbox and a link to recover your lost password.  On the right side, a new user can enter in their details into four fields for email, confirm email, password, confirm password.  Underneath these fields is the Register button or the Sign in as Guest button.  </p>
+			<p>The Chat Window is a small window at the bottom right corner of the screen. When minimized, the tab includes the user's name, and their status. </p>
+			<p>The Beacon Creation Window takes the place of the Beacon lists on the Home Window.  On this window, users enter the details of their Beacon such as School, Course ID, Location, Date/time, tags, and a short description.  Below the fields are the buttons to Cancel or Create Beacon. </p>
+			<p>The User Discovery Window replaces the map and the lists of the Home Window.  Centred in the window is a list of students which can be navigated with a scroll bar.  ON the top right, there is a navigation bar to search for a name.</p>
+			<p>The Profile Page Window replaces the map and the lists of the Home Window.  It contains the details of their User Profile and includes details such as their name, display picture, and buttons Invite to Beacon and Chat.  Along the right side, there are details about themselves including School, a description, and their classes they're enrolled in. </p>
+	
+>>>>>>> 1ec22a4c0b152bd362a6500d7195e886e7d9dd1c
 			<h4><span id="2.1.2">Sample GUI</h4>
 			<img src="Sample-GUI.png" alt="Sample GUI Image" style="width:1130;height:636;">
 
@@ -125,7 +147,11 @@
 		Multiple users must be able to access the website at once. To ensure the website feels responsive, the map of nearby beacons should update within a second whenever a user changes their parameters.
 
 		<h3><span id="2.5">Assumptions and Dependencies</span></h3>
+<<<<<<< HEAD
 		Users are assumed to have a functioning web-capable device with a browser that is compatible with the Google Maps API. They are expected to have an internet connection until they enter their parameters and relevant Beacons are displayed. Once they have loaded their nearby Beacons, they should be able to disconnect from the internet and still view them, so they can check a Beacon’s description while they are traveling to it. This application should function on any operating system.
+=======
+		Users are assumed to have a functioning web-capable device with a browser that is compatible with Google Maps. They are expected to have an internet connection until they enter their parameters and relevant Beacons are displayed. Once they have loaded their nearby Beacons, they should be able to disconnect from the internet and still view them, so they can check a Beacon’s description while they are traveling to it. This application should function on any operating system.
+>>>>>>> 1ec22a4c0b152bd362a6500d7195e886e7d9dd1c
 
 	<h2><span id="3.0">Specific Requirements</span></h2>
 	
@@ -140,7 +166,7 @@
 			<li>If a user searches for a beacon and none are found, display a message saying none have been found.</li>
 			<li>The beacon display boxes along the left side of the web application includes the school name, course code, user entered description, the beacon start/end time, and icons for tags such as whether there is a computer lab, whiteboards, WiFi, etc.</li>
 			<li>The screen display must fit the window on any resolution display and adjust automatically if the user resizes the window.</li>
-			<li>There is a chat window in the bottom right of the screen, where the user can communicate with their friends and other users of the site.</li>
+			<li>There is a chat window in the bottom right  of the screen, where the user can communicate with their friends and other users of the site.</li>
 			<li>The notification box is adjacent to the chat windows, and users are able to see beacons coming up for courses they are registered for.</li>
 		</ul>
 		

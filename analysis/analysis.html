@@ -7,129 +7,201 @@
                 Study Space
 				</h1>
             Analysis Document
-            <br> Version 0.0.3 - 06/28/2017
+            <br> Version 1.5 - 07/03/2017
         </center>
     </header>
-	<span style="font-size:150%;">
     <ul>
 		<li><a href="#1.0">Introduction</a></li>
 		<li><a href="#2.0">Object Classification</a>
 			<ul>
 				<li><a href="#2.1">Entity Objects</a></li>
-				<li><a href="#2.2">Boundry Objects</a></li>
+				<li><a href="#2.2">Boundary Objects</a></li>
 				<li><a href="#2.3">Control Objects</a></li>
 			</ul>
 		</li>
 		<li><a href="#3.0">Diagrams</a>
 			<ul>
-				<li><a href="#3.1">Class Diagram</a></li>
-				<li><a href="#3.2">Robustness Diagrams</a></li>
-				<li><a href="#3.3">Sequence Diagrams</a></li>
-				<li><a href="#3.4">State Diagram</a></li>
-				<li><a href="#3.5">Use Case Diagram</a></li>
+				<li><a href="#3.1">Use Case Diagram</a></li>
+				<li><a href="#3.2">State Diagram</a></li>
+				<li><a href="#3.3">Class Diagram</a></li>
+				<li><a href="#3.4">Robustness Diagrams</a></li>
+				<li><a href="#3.5">Sequence Diagrams</a></li>
 			</ul>
 		</li>
         <li><a href="#4.0">Versions</a></li>
         <li><a href="#5.0">Authored By</a></li>
     </ul>
-	</span>
     <br>
     <h2><span id="1.0">Introduction</span></h2>
-        Study Group Finder is a web-based application that allows students in any university to post and find study group locations. By doing so, students will be able to help each other achieve their academic goals as well as make new acquaintances.
+    Study Space is a web-based application that allows students in any university to post and find study group locations. By doing so, students are able to help each other achieve their academic goals as well as make new acquaintances.
 
     <h2><span id="2.0">Object Classification</span></h2>
-        <h3><span id="2.1">Entity Objects</span></h3>
-            <u>Host</u>: a User that created a Beacon <br>
-            <u>User</u>: a person that created an account with username and password <br>
-            <u>Guest</u>: a person who does not own an account <br>
-            <u>Profile</u>: a User’s profile they can edit <br>
-            <u>Beacon</u>: a Beacon created by a Host that Users may join <br>
-            <u>ChatDB</u>: a way for users to communicate through text <br>
-            <u>BeaconList</u>: a list of Beacons
+	
+		<h3><span id="2.1">Entity Objects</span></h3>
+			<u>Beacon</u>: A study location with details of the location created by a RegisteredUser for other Users and RegisteredUsers to join.<br>
+			<u>BeaconList</u>: A list of Beacons.<br>
+			<u>ChatDB</u>: A way for all GuestUsers and RegisteredUsers to communicate through text.<br>
+			<u>GuestUser</u>: A Human who does not own an account and is using the application.<br>
+			<u>Profile</u>: A RegisteredUser’s profile they can edit.<br>
+			<u>RegisteredUser</u>: A GuestUser that created an account with username and password.<br>
+			<u>UserDB</u>: A database to store RegisteredUsers credentials.<br>
+		
+		<h3><span id="2.2">Boundary Objects</span></h3>
+			<u>BeaconChatWindow</u>: A Chat including all GuestUsers and RegisteredUsers in that Beacon.<br>
+			<u>BeaconConfirmationWindow</u>: A window confirming the credentials of a Beacon.<br>
+			<u>BeaconControlWindow</u>: A window with all options to control the Beacon.<br>
+			<u>BeaconCreationWindow</u>: Where a RegisteredUser can create a Beacon by entering location and course code then can control that Beacon.<br>
+			<u>BeaconFailedJoinWindow</u>: A window shown when joining Beacon has failed.<br>
+			<u>BeaconJoinedWindow</u>: A window notifying a GuestUser or RegisteredUser that they joined a Beacon.<br>
+			<u>ChatBar</u>: A bar containing all Chat instances to that GuestUser or RegisteredUser.<br>
+			<u>ChatWindow</u>: A window of which a GuestUser or RegisteredUser sends and receives messages.<br>
+			<u>HomeWindow</u>: The main window view of all operations to GuestUsers and RegisteredUsers.<br>
+			<u>LoginWindow</u>: A window where GuestUsers can enter their credentials to login to their RegisteredUser account.<br>
+			<u>ProfileWindow</u> Displays a RegisteredUsers Profile.<br>
+			<u>SearchWindow</u> A window where GuestUsers and RegisteredUsers apply filters to BeaconList.<br>
 
-        <h3><span id="2.2">Boundry Objects</span></h3>
-            <u>GuestLoginView</u>: Where the guest can login and become a User or remain a Guest <br>
-            <u>GuestUserCreationView</u>: Window where guest can create an account with email and password <br>
-            <u>GuestPageView</u>: The page a Guest sees when entering website <br>
-            <u>UserPageView</u>: The page a User would see upon login <br>
-            <u>BeaconCreationView</u>: Where a User can create a Beacon by entering location and course code
-            then becomes a Host to that Beacon <br>
-            <u>BeaconFailedJoinView</u>: window shown when joining beacon has failed <br>
-            <u>HostView</u>: window that the Host can only see <br>
-            <u>HostBeaconControlView</u>: beacon controls for the Beacons Host <br>
-            <u>BeaconChatWindowView</u>: a Chat including all Users and Guests in that Beacon <br>
-            <u>FilterBeaconView</u>: window where Users can filter Beacons through classes <br>
-            <u>BeaconListView</u>: shows the BeaconList <br>
-            <u>ProfileWindow</u>: Displays a Users profile <br>
-            <u>UserPrivateChatView</u>: a Chat between two users <br>
-            <u>EditProfileView</u>: a window where Users can edit their Profile <br>
-            <u>LogoutView</u>: logout window for Users
         <h3><span id="2.3">Control Objects</span></h3>
-
-            <u>JoinChat</u>: controller to join a chat<br>
-            <u>SendMsg</u>: coordinates sending a message<br>
-            <u>ChangeToHost</u>: changes user to host<br>
-            <u>BackToSearch</u>: redirects back to searchwindow after a failed search<br>
-            <u>DisplayResults</u>: displays results of a search<br>
-            <u>JoinBeacon</u>: coordinates joining a beacon<br>
-            <u>ApplySearchFilters</u>: applies filters to beaconlist<br>
-            <u>LeaveChat</u>: User leaves Chat<br>
-            <u>ProfileSearch</u>: filters profiles by User<br>
-            <u>CreateBeacon</u>: creates the beacon<br>
-            <u>ValidateBeacon</u>: validates beacon creation<br>
-            <u>RelocateBeacon</u>: allows Host to relocate a beacon<br>
-            <u>FailedCreation</u>: notifies Host of failed beacon creation<br>
-            <u>CloseBeacon</u>: allows Host to close the beacon<br>
-            <u>ExtendBeacon</u>: allows Host to extend the time of their beacon<br>
-            <u>RegisterBeacon</u>: Registers beacon to BeaconList
+            <u>ApplySearchFilters</u>: Applies filters to BeaconList.<br>
+			<u>BackToSearch</u>: Redirects GuestUser or RegisteredUser back to SearchWindow after a failed search.<br>
+			<u>CreateBeacon</u>: Creates the beacon.<br>
+			<u>CloseBeacon</u>: Allows RegisteredUser controlling the Beacon to close the Beacon.<br>
+			<u>CancelChanges</u>: Cancels changes made to a RegisteredUsers ProfileWindow.<br>
+			<u>DisplayResults</u>: Displays results of a search.<br>
+			<u>EditProfile</u>: Applies changes to a RegisteredUsers Profile.<br>
+			<u>ExtendBeacon</u>: Allows RegisteredUser controlling the Beacon to extend the time of their Beacon.<br>
+			<u>EnterInfo</u>: Writes RegisteredUser entered info to the Beacon.<br>
+			<u>FailedCreation</u>: Notifies the RegisteredUser controlling the Beacon of failed Beacon creation.<br>
+			<u>InviteUser</u>: Invites another GuestUser or RegisteredUser to Chat.<br>
+			<u>JoinBeacon</u>:  Joins a GuestUser or RegisteredUser to a Beacon.<br>
+			<u>JoinChat</u>: Controller to join a GuestUser or RegisteredUser to a Chat.<br>
+			<u>LeaveBeacon</u>: Removes a GuestUser or RegisteredUser from a Beacon they are in.<br>
+			<u>Login</u>: Logs in a GuestUser to their RegisteredUser account.<br>
+			<u>Logout</u>: Logs out a RegisteredUser from their account.<br>
+			<u>LeaveChat</u>: Controller to GuestUser or RegisteredUser leaves Chat.<br>
+			<u>NotifyUser</u>: Notifies GuestUser or RegisteredUser if an invitation to a Beacon.<br>
+			<u>SaveChanges</u>: Saves changes made to a RegisteredUser ProfileWindow.<br>
+			<u>SendMsg</u>: Controls sending a message to a Chat.<br>
+			<u>RelocateBeacon</u>: Allows RegisteredUser controlling the Beacon to relocate their Beacon.<br>
+			<u>RegisterBeacon</u>: Registers Beacon to BeaconList.<br>
+			<u>ValidateBeacon</u>: Validates Beacon creation.<br>
+			<u>ValidateUser</u>: Validates a RegisteredUsers credentials upon login.<br>
 
     <h2><span id="3.0">Diagrams</span></h2>
 
-		<h3><span id="3.1">Class Diagram</span></h3>
-		<img src="./diagrams/class_diagram.PNG">
-		<h3><span id="3.2">Robustness Diagrams</span></h3>
-		<img  width="50" height="70"  src="./diagrams/Robustness__Chat.PNG">
-		<img  width="50" height="70"  src="./diagrams/Robustness__CreateBeacon.PNG">
-		<img  width="50" height="70"  src="./diagrams/Robustness__BeaconControl.PNG">
-        <img src="./diagrams/Robustness__EditProfile.PNG">
-        <img src="./diagrams/Robustness__JoinBeacon.PNG">
-        <img src="./diagrams/Robustness__LeaveBeacon.PNG">
-        <img src="./diagrams/Robustness__Login.PNG">
-        <img src="./diagrams/Robustness__Logout.PNG">
-		<h3><span id="3.3">Sequence Diagrams</span></h3>
-		<img src="./diagrams/Sequence_BeaconClose.PNG">
-		<img src="./diagrams/Sequence_BeaconCreation.PNG">
-		<img src="./diagrams/Sequence_BeaconExtend.PNG">
-		<img src="./diagrams/Sequence_BeaconJoin.PNG">
-        <img src="./diagrams/Sequence_BeaconLeave.PNG">
-        <img src="./diagrams/Sequence_BeaconRelocate.PNG">
-        <img src="./diagrams/Sequence_EditProfile.PNG">
-        <img src="./diagrams/Sequence_Login.PNG">
-        <img src="./diagrams/Sequence_Logout.PNG">
-		<h3><span id="3.4">State Diagram</span></h3>
-		<img src="./diagrams/state_diagram.PNG">
-		<h3><span id="3.5">Use Case Diagram</span></h3>
-		<img src="./diagrams/use_case_diagram.PNG">
-	<br>
+		<h3><span id="3.1">Use Case Diagram</span></h3>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/use_Case_diagram.png">
+		
+		<h3><span id="3.2">State Diagram</span></h3>
+			<img src="./diagrams/state_diagram.PNG">
+        
+		<h3><span id="3.3">Class Diagram</span></h3>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/class_diagram.png">
+			<b>Class Diagram Description</b><br><br>
+			This class diagram outlines each class to be used within the web application. A brief description of each class is given below:<br><br>
+			<u>Beacon</u>: Each Beacon is associated with 0 or more Beacon(s), while each Beacon is associated with 1 or more RegisteredUser(s). The Beacon class stores the location, start and end time of the Beacon, as well as other information pertaining to that particular Beacon’s RegisteredUser and Course.<br><br>
+			<u>Course</u>: Each GuestUser or RegisteredUser may be associated with 0 or more Course(s). The Course class stores user-generated information pertaining to each course the User identifies as enrolled in.<br><br>
+			<u>Chat</u>: The Chat class operates as an abstract class which implements two child classes – BeaconChat and PrivateChat. Each Chat is associated with 0 or more Message(s). The BeaconChat class allows for communication between members of a Beacon. This class requires a separate ID generation process from that implemented by PrivateChat given the fact that PrivateChat is only between two people.<br><br> 
+			<u>Message</u>: The Message class is associated with 1 and only 1 Chat. Each Message is package access and may only be accessed from within itself or through the Chat class. Each Message will be associated with a User, a text string, as well as a timestamp. This timestamp is not included in the Message constructor and will be identified at runtime by the CPU.<br><br>
+			<u>User</u>: The User class is the parent class of the GuestUser and the RegisteredUser. While both GuestUser and RegisteredUser inherit methods from the parent User class, only a Registered User may create a Beacon. The RegisteredUser class also stores that user’s Gravitar (Globally Recognized Avatar), which associates a picture with each RegisteredUser.<br> 
+
+		<h3><span id="3.4">Robustness Diagrams</span></h3>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/Robustness__Chat.png"><br>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/Robustness__CreateBeacon.png"><br>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/Robustness__BeaconControl.png"><br>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/Robustness__EditProfile.png"><br>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/Robustness__JoinBeacon.png"><br>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/Robustness__LeaveBeacon.png"><br>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/Robustness__Login.png"><br>
+			<img width="100%" height="100%" src="https://raw.githubusercontent.com/cp317/analysis/master/Robustness__Logout.png">
+		
+		<h3><span id="3.5">Sequence Diagrams</span></h3>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_BeaconClose.png"><br>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_BeaconCreation.png"><br>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_BeaconExtend.png"><br>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_BeaconInvite.png"><br>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_BeaconJoin.png"><br>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_BeaconLeave.png"><br>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_BeaconRelocate.png"><br>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_EditProfile.png"><br>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_Login.png"><br>
+			<img src="https://raw.githubusercontent.com/cp317/analysis/master/Sequence_Logout.png">
 	
 	<h2><span id="4.0">Versions</span></h2>
-		<h4>Version 0.0.1 - 06/18/2017</h4>
-		<i>HTML Document created</i>
-		<h5>Jonathan Wu</h5>
-		<h4>Version 0.0.2 - 06/18/2017</h4>
-		<i>Diagrams Embedded as PNG, fixes and improvements</i>
-		<h5>Alex Yang</h5>
-		<h4>Version 0.0.3 - 06/28/2017</h4>
-		<i>Implemented dynamic header and subheader numbering</i>
-		<h5>Alex Yang</h5>
-        <h4>Version 0.0.4 - 07/03/2017</h4>
-        <i>Updated all diagrams from original analysis document</i>
-        <h5>Shiv Gupta</h5>
+		<h4>Version 1.0 - 06/18/2017</h4>
+			<i>Created the documents content</i>
+			<ul>
+				<li>- Ben Bogusat</li>
+				<li>- Colin Kim</li>
+				<li>- Gareth Sharpe</li>
+				<li>- Garrett Parris</li>
+			</ul>
+			
+			<i>Converted to the document into HTML</i>
+			<ul>
+				<li>- Jonathan Wu</li>
+			</ul>
+			
+			<i>Thanks to SQA by</i>
+			<ul>
+				<li>- Amandeep Gogia </li>
+				<li>- Ben Ngan</li>
+				<li>- Jake Loftus</li>
+				<li>- Martin Symington</li>
+				<li>- Rishhi Balakrishnan</li>
+				<li>- Virack Chhom</li>
+			</ul>
+			
+		<h4>Version 1.1 - 06/18/2017</h4>
+			<i>Diagrams Embedded as PNG, fixes and improvements</i>
+			<ul>
+				<li>- Alex Yang</li>
+			</ul>
+			
+		<h4>Version 1.2 - 06/28/2017</h4>
+			<i>Implemented dynamic header and subheader numbering</i>
+			<ul>
+				<li>- Alex Yang</li>
+			</ul>
+			
+		<h4>Version 1.3 - 06/29/2017</h4>
+			<i>Edited spelling mistakes, wording errors, and spacing issues, added class diagram description, edited sequence and state diagrams.</i>
+			<ul>
+				<li>- Gareth Sharpe</li>
+				<li>- Garrett Parris</li>
+			</ul>
+			
+			<i>Thanks to SQA by</i>
+			<ul>
+				<li>- Amnah Alahmadi</li>
+				<li>- David Brown</li>
+				<li>- Ethyl Chan</li>
+				<li>- Milik Smith</li>
+			</ul>
+			
+		<h4>Version 1.4 - 06/30/2017</h4>
+			<i>Edited some more spelling errors and other inconsistencies</i>
+			<ul>
+				<li>- Garrett Parris</li>
+			</ul>
+			
+			<i>Thanks to SQA by</i>
+			<ul>
+				<li>- Milik Smith</li>
+			</ul>
+			
+        <h4>Version 1.5 - 07/03/2017</h4>
+			<i>Updated all diagrams from original analysis document</i>
+			<ul>
+				<li>- Shiv Gupta</li>
+			</ul>
+
 	<h2><span id="5.0">Authored By</span></h2>
-		<h5>name</h5>
-		<h5>name</h5>
-		<h5>name</h5>
-		<h5>name</h5>
+		<ul>
+			<li>- Ben Bogusat</li>
+			<li>- Colin Kim</li>
+			<li>- Gareth Sharpe</li>
+			<li>- Garrett Parris</li>
+		</ul>
 </body>
 </link>
 </html>
