@@ -9,11 +9,7 @@
                 Study Space
             </h1>
             Requirements Document
-<<<<<<< HEAD
             <br>Version 2.0 - 8/9/2017
-=======
-            <br>Version 1.9 - 8/8/2017
->>>>>>> 1ec22a4c0b152bd362a6500d7195e886e7d9dd1c
         </center>
     </header>
     <ul>
@@ -54,11 +50,7 @@
     </ul>
     <br>
 	<h2><span id="1.0">Introduction</span></h2>
-<<<<<<< HEAD
-	Study Group Finder is a web-based application that allows students in any school to post and find study group locations. The purpose of this application is to allow students to find study groups with ease. By doing so, students are able to help each other achieve their academic goals as well as make new acquaintances.
-=======
 	Study Space is a web-based application that allows students in any university to post and find study group locations. The purpose of this application is to allow students to find study groups with ease. By doing so, students are able to help each other achieve their academic goals as well as make new acquaintances.
->>>>>>> 1ec22a4c0b152bd362a6500d7195e886e7d9dd1c
 
 		<h3><span id="1.1">Purpose </span></h3>
 		This document outlines the requirements of the Study Space application and describes its features. During the creation of the application, everyone involved refers to this document to understand the requirements as well as use it as the basis for their work.
@@ -114,14 +106,6 @@
 	<h2><span id="2.0">Overall Description</span></h2>
 	
 		<h3><span id="2.1">Product Perspective</span></h3>
-<<<<<<< HEAD
-		Study Group Finder is a web based application with two major components: front end and back end. It also implements the Google Maps API in order to display a map to the user. It takes input from the user to determine relevant beacons to display to them.
-
-			<h4><span id="2.1.1">User Interfaces</span></h4>
-			<p>The main view has a map taking up the right side of the web application. The left half of the display has three search bars at the top, which can be used to sort based on location, school name, and course code. There will also be a series of tags for the user to further filter the beacons. Below that, there is a scrollable list displaying boxes showing detailed information of all the nearby beacons. These boxes are ordered by their distance from the user and includes various details including end time, room number, and the course code. There is a chat box for each beacon, which is initially hidden but can be opened by the user. In the top right of the screen, there is a button that brings a window for the user to login or register an account. This window also includes the option for a user to reset their password if they have forgotten it. Notifications and invites appear in the same fashion as chat boxes. </p>
-			<p>Each user has a profile, which displays information such as the courses they are enrolled in and a brief description about themselves. The user is able to change the view to show a list of courses at their school or a list of user profiles of other people in their courses. Clicking a profile from the user list takes the user to that user's profile. While viewing the user's profile, they are able to invite the user to a beacon or start a chat with the user.</p>
-			
-=======
 		Study Space is a web based application with two major components: front end and back end. It also implements the Google Maps API in order to display a map to the user. It takes input from the user to determine relevant beacons to display to them.
 
 			<h4><span id="2.1.1">User Interfaces</span></h4>
@@ -133,12 +117,11 @@
 			<p>The User Discovery Window replaces the map and the lists of the Home Window.  Centred in the window is a list of students which can be navigated with a scroll bar.  ON the top right, there is a navigation bar to search for a name.</p>
 			<p>The Profile Page Window replaces the map and the lists of the Home Window.  It contains the details of their User Profile and includes details such as their name, display picture, and buttons Invite to Beacon and Chat.  Along the right side, there are details about themselves including School, a description, and their classes they're enrolled in. </p>
 	
->>>>>>> 1ec22a4c0b152bd362a6500d7195e886e7d9dd1c
 			<h4><span id="2.1.2">Sample GUI</h4>
 			<img src="Sample-GUI.png" alt="Sample GUI Image" style="width:1130;height:636;">
 
 		<h3><span id="2.2">Product Functions</span></h3>
-		Every user has the option to create a group or join a group. When a user creates a group they specify attributes of the group, such as the course code, where the group is located, and how long the group will be there.  If a user is registered for the same course, they receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they are able to select a group by looking at a map or by scrolling through a list of nearby beacons. The user is able to search for nearby groups by location, and filter these groups by the school they attend and the course code/course page of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users have the option to register an account and sign in to the website, which allows them to view and edit their beacons from any device they sign in with. Users are able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon.  Users are able to view the user profiles of other users, which allows them to invite users to their beacon or start a private chat with the user.
+		Every user has the option to create a group or join a group. When a user creates a group they specify attributes of the group, such as the course code, where the group is located, and how long the group will be there.  If a user is registered for the same course, they receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they are able to select a group by looking at a map or by scrolling through a list of nearby beacons. The user is able to search for nearby groups by location, and filter these groups by the school they attend and the course code of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users have the option to register an account and sign in to the website, which allows them to view and edit their beacons from any device they sign in with. Users are able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon.  Users are able to view the user profiles of other users, which allows them to invite users to their beacon or start a private chat with the user.
 		
 		<h3><span id="2.3">User Characteristics</span></h3>
 		The intended audience are students with the technical expertise to use a website.
@@ -147,11 +130,7 @@
 		Multiple users must be able to access the website at once. To ensure the website feels responsive, the map of nearby beacons should update within a second whenever a user changes their parameters.
 
 		<h3><span id="2.5">Assumptions and Dependencies</span></h3>
-<<<<<<< HEAD
 		Users are assumed to have a functioning web-capable device with a browser that is compatible with the Google Maps API. They are expected to have an internet connection until they enter their parameters and relevant Beacons are displayed. Once they have loaded their nearby Beacons, they should be able to disconnect from the internet and still view them, so they can check a Beacon’s description while they are traveling to it. This application should function on any operating system.
-=======
-		Users are assumed to have a functioning web-capable device with a browser that is compatible with Google Maps. They are expected to have an internet connection until they enter their parameters and relevant Beacons are displayed. Once they have loaded their nearby Beacons, they should be able to disconnect from the internet and still view them, so they can check a Beacon’s description while they are traveling to it. This application should function on any operating system.
->>>>>>> 1ec22a4c0b152bd362a6500d7195e886e7d9dd1c
 
 	<h2><span id="3.0">Specific Requirements</span></h2>
 	
