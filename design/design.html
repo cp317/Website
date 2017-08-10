@@ -1,0 +1,545 @@
+<html>
+<link rel="stylesheet" type="text/css" href="design_styles.css">
+
+<body>
+    <header>
+        <center>
+            <h1>
+                Study Space
+            </h1>
+            Design Document
+            <br> Version 1.5 - 08/09/2017
+        </center>
+    </header>
+    <ul>
+        <li><a href="#1.0">Introduction</a>
+            <ul>
+                <li><a href="#1.1">Purpose</a></li>
+                <li><a href="#1.2">Scope</a></li>
+                <li><a href="#1.3">Definitions</a></li>
+                <li><a href="#1.5">References</a></li>
+                <li><a href="#1.6">Overview</a></li>
+            </ul>
+        </li>
+        <li><a href="#2.0">Decomposition Description</a>
+            <ul>
+                <li><a href="#2.1">Module Decomposition</a>
+                    <ul>
+                        <li><a href="#2.1.1">Package Diagram</a></li>
+                        <li><a href="#2.1.2">Study Space Application Package Diagram</a></li>
+                        <li><a href="#2.1.3">Study Space Backend Package Diagram</a></li>
+                        <li><a href="#2.1.4">Study Space Application Class Diagram</a></li>
+                        <li><a href="#2.1.5">Study Space Database Class Diagram</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li><a href="#2.2">Concurrent Process Decomposition</a>
+                    <ul>
+                        <li><a href="#2.2.1">Home Window</a></li>
+                        <li><a href="#2.2.2">Login Window</a></li>
+                        <li><a href="#2.2.3">BeaconCreationWindow</a></li>
+                        <li><a href="#2.2.4">ClassDiscoveryWindow</a></li>
+                        <li><a href="#2.2.5">UserDiscoveryWindow</a></li>
+                        <li><a href="#2.2.6">ChatWindow</a></li>
+                        <li><a href="#2.2.7">NavigationBar</a></li>
+                    </ul>
+                </li>
+                <li><a href="#2.3">Data Decomposition</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#3.0">Interface Description</a>
+            <ul>
+                <li><a href="#3.1">Module Interface</a>
+                    <ul>
+                        <li><a href="#3.1.1">HomeWindow</a></li>
+                        <li><a href="#3.1.2">LoginWindow</a></li>
+                        <li><a href="#3.1.3">BeaconCreationWindow</a></li>
+                        <li><a href="#3.1.4">ClassDiscoveryWindow</a></li>
+                        <li><a href="#3.1.5">UserDiscoveryWindow</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li><a href="#4.0">Detailed Design</a>
+            <ul>
+                <li><a href="#4.1">Module Detailed Design</a>
+                    <ul>
+                        <li><a href="#4.1.1">User Modules</a></li>
+                        <li><a href="#4.1.2">Beacon Modules</a></li>
+                        <li><a href="#4.1.3">Chat</a></li>
+                    </ul>
+                </li>
+                <li><a href="#4.2">Documentation</a></li>
+
+            </ul>
+        </li>
+    </ul>
+    <h2><span id="1.0">Introduction</span></h2>
+    <h3><span id="1.1">Purpose</span></h3>
+    This design document describes how the requirements for the Study Space application is achieved. It goes into detail regarding software architecture, packages and module functions.
+    <h3><span id="1.2">Scope</span></h3>
+    This document is constructed to guide the software developers in the creation of the product.
+    <h3><span id="1.3">Definitions</span></h3>
+    BeaconDB - The table in the database which stores a list of all active beacons.
+    <br>ChatDB - The table in the database which logs all chat messages in beacons and between users.
+    <br>CourseDB - The table in the database which stores all the course details.
+    <br>UserDB - The table in the database which stores all user credentials.
+    <h3><span id="1.4">References</span></h3>
+    IEEE. IEEE Std 1016-1998 IEEE Recommended Practice for Software Design Descriptions. IEEE Computer Society, 1998
+    <h3><span id="1.5">Overview</span></h3>
+    This document is written adhering to the guidelines outlined by the IEEE Recommended Practice for Software Design Descriptions.
+
+    <h2><span id="2.0">Decomposition Description</span></h2>
+    This section shows the decomposition of the system in 3 ways: 
+    <ul>
+        <li>
+            Module decomposition is the breakdown of each module, the data and functions of each class is easy to change, reuse and comprehend
+        </li>
+        <li>
+            Concurrent process decomposition explains what the user is able to see on each page
+        </li>
+        <li>
+            Data decomposition explains what is used to store the persistent data.
+        </li>
+    </ul>
+    <h3><span id="2.1">Module Decomposition</span></h3>
+    <h4><span id="2.1.1">Package Diagram</span></h4>
+    <p>The design of Study Space separates the front end and back end. The front end is referred to as the Study Space Application and the backend is referred to as the Study Space Backend.</p> 
+    <img src ="./UML Diagrams/Package Diagram.png">
+
+    <h4><span id="2.1.2">Study Space Application Package Diagram </span></h4>
+    <p>The Study Space front end application is divided into application views and functions related to those views. A detailed description of all functions can be found in Section 4.0 Detailed Design.</p>
+    <img src ="./UML Diagrams/FrontEnd Package Diagram.PNG">
+
+    <h4><span id="2.1.3">Study Space Backend Package Diagram</span></h4>
+    <p>The Study Space backend provides storage and some key services for the frontend.</p>
+    <img src ="./UML Diagrams/BackEnd Package Diagram.PNG">     
+ 
+    <h4><span id="2.1.4">Study Space Application Class Diagram</span></h4>
+    <img src ="./UML Diagrams/ClassDiagram.PNG">
+ 
+    <h4><span id="2.1.5">Study Space Database Class Diagram</span></h4>
+    <img src ="./UML Diagrams/Database Class Diagram.PNG">
+
+    <h5><span style = "text-decoration: underline;">Notes</span></h5>
+
+    <ul>
+        <li>FK refers to foreign key </li>
+        <li>The ​chatlogs are stored as a string in a text file containing a line for each message in the format "timeStamp: sender, msgString". </li>
+    </ul>  
+
+
+    <h3><span id="2.2">Concurrent Process Decomposition</span></h3>
+    <h4><span id="2.2.1">HomeWindow</span></h4>
+    The main view for the site. It contains a map on the right side which allows for easy selection of beacon locations. It has fields for user to input school, course ID, location, date, start time, end time, and tags for filtering purposes. It contains a list of active beacons that abide by the filters set which can be joined. Finally, it shall also have a login button at the top right corner.
+    <h4><span id="2.2.2">LoginWindow</span></h4>
+    Contains the login part on the left side and register part on the right side. The login part contains fields for Registered Users to input an email and password. The register part gives users the option to register for an account or sign in as a guest. The input fields are: Email, Confirm Email, Password, and Confirm Password. 
+    <h4><span id="2.2.3">BeaconCreationWindow</span></h4>
+    Contains the same view as HomeWindow but the list of beacons to join is gone and the input fields are shifted down to be centered relative to the map. These input fields are used to set the attributes for the Beacon that is being created. Beacon creation is finalized by clicking a “Confirm Beacon Creation” button.
+    <h4><span id="2.2.4">ClassDiscoveryWindow</span></h4>
+    Contains a list of courses with their respective ratings, quick description and a link to the school page that describes the course.
+    <h4><span id="2.2.5">UserDiscoveryWindow</span></h4>
+    Contains a list of Registered Users. Each registered user listed shows their profile name, the gravitar they set, and a description of themselves that they have also set.
+    <h4><span id="2.2.6">ChatWindow</span></h4>
+    A small window at the bottom right corner of the screen that can be used to chat with others.
+    <h4><span id="2.2.7">NavigationBar</span></h4>
+    A bar that has buttons to other tabs.
+    <h3><span id="2.3">Data Decomposition</span></h3>
+    All data is be handled by a real-time server which is hosted using Firebase. Data is be validated locally, and then sent to the server in JSON format. The server then stores the data in the database in JSON format. A unique key is be generated for each piece of data pushed to the server, and this allows easy referencing of the correct JSON objects.
+    <h2><span id="3.0">Interface Description</span></h2>
+    <h3><span id="3.1">Module Interface</span></h3>
+    <h4><span id="3.1.1">Home Window</span></h4>
+    <img width="1000" height="700" src = "./interface diagrams/home_window_ver2.PNG">
+    <img src = "./Charts/home_window_chart.PNG">
+
+    <h4><span id="3.1.2">LoginWindow</span></h4>
+    <img src width="1000" height="700" ="./interface diagrams/login_window.PNG">
+    <img src ="./Charts/login_window_chart.PNG">
+    
+    <h4><span id="3.1.3">BeaconCreationWindow</span></h4>
+    <img width="1000" height="700" src ="./interface diagrams/beacon_create_ver2.PNG">
+    <img src ="./Charts/beacon_create_chart.PNG">
+    
+    <h4><span id="3.1.4">ClassDiscoveryWindow</span></h4>
+    <img width="1000" height="700" src ="./interface diagrams/class_discover_ver2.PNG">
+    <img src ="./Charts/class_discovery_chart.PNG">
+
+    <h4><span id="3.1.5">UserDiscoveryWindow</span></h4>
+    <img width="1000" height="700" src ="./interface diagrams/user_discover_ver2.PNG">
+    <img src ="./Charts/user_discovery_chart.PNG">
+
+    <h2><span id="4.0">Detailed Design</span></h2>
+    <h3><span id="4.1">Module Detailed Design</span></h3>
+    This section provides a detailed look on module design. It provides steps to produce the intended output of each module in pseudocode. This Pseudocode is useful for implementation as it provides an outline of which can be referenced when developing the product in code.
+    <h4><span id="4.1.1">User Modules</span></h4>
+    <b><u>Login</u></b>
+    <br> Parameters: None
+    <br> Description: Logs in a GuestUser to their RegisteredUser account.
+    <ul>
+        <li>
+            Call ValidateUser function.
+        </li>
+        <li>
+            If ValidateUser returns true, then log user into their Registered User Account.
+        </li>
+        <li>
+            Notify user “Username or password invalid”.
+        </li>
+        <li>
+            Return to HomeWindow
+        </li>
+    </ul>
+    <b><u>Logout</u></b>
+    <br> Parameters: None
+    <br> Description: Logs out a RegisteredUser from their account.
+    <ul>
+        <li>
+            Leave any active chats or beacons the user is currently in.
+        </li>
+        <li>
+            Log user out.
+        </li>
+        <li>
+            The user should now be a guest user.
+        </li>
+    </ul>
+    <b><u>EditProfile</u></b>
+    <br> Parameters: None
+    <br> Description: Opens the ProfileEditWindow so user can apply changes to their RegisteredUser profile.
+    <ul>
+        <li>
+            Launch the ProfileEditWindow.
+        </li>
+    </ul>
+    <b><u>SaveChanges</u></b>
+    <br> Parameters: String biography, String userName, String gravatar, String school
+    <br> Description: Saves changes made to a RegisteredUser ProfileWindow.
+    <ul>
+        <li>
+            Update the UserDB database with the changes.
+        </li>
+        <li>
+            Update the local user profile window.
+        </li>
+        <li>
+            Return to ProfileWindow.
+        </li>
+    </ul>
+    <b><u>CancelChanges</u></b>
+    <br> Parameters: None
+    <br> Description: Cancels changes made to a RegisteredUsers ProfileWindow. (Changes are not applied)
+    <ul>
+        <li>
+            Exit the ProfileEditWindow.
+        </li>
+        <li>
+            Return to ProfileWindow.
+        </li>
+    </ul>
+    <b><u>ValidateUser</u></b>
+    <br> Parameters: String userName, String password
+    <br> Description: Validates a RegisteredUser’s credentials upon login.
+    <ul>
+        <li>
+            Access UserDB to compare the stored credentials with the credentials that have been input by the user.
+        </li>
+        <li>
+            If credentials match, then return true.
+        </li>
+        <li>
+            If credentials do not match, return false.
+        </li>
+    </ul>
+    <h4><span id="4.1.2">Beacon Modules</span></h4>
+
+    <b><u>CreateBeacon</u></b>
+    <br> Parameters: None
+    <br> Description: Opens the BeaconCreationWindow which allows the user to set the attributes for the beacon they want to create.
+    <ul>
+        <li>
+            Launch the BeaconCreationWindow
+        </li>
+    </ul>
+    <b><u>EnterInfo</u></b>
+    <br> Parameters: RegisteredUser host, String location, Date start, Date end.
+    <br> Description: Writes RegisteredUser entered info to the Beacon.
+    <ul>
+        <li>
+            User enters info.
+        </li>
+        <li>
+            Call validate beacon.
+        </li>
+    </ul>
+    <b><u>ValidateBeacon</u></b>
+    <br> Parameters: RegisteredUser host, String location, Date start, Date end.
+    <br> Description: Validates Beacon Creation.
+    <ul>
+        <li>
+            Check if location is valid.
+        </li>
+        <li>
+            Check if start date is valid.
+        </li>
+        <li>
+            Check if end date is valid.
+        </li>
+        <li>
+            Ensure that end date is after start date, and is therefore valid.
+        </li>
+        <li>
+            If all is valid, call RegisterBeacon. Then launch BeaconControlWindow.
+        </li>
+        <li>
+            If any is not valid call FailedCreation.
+        </li>
+    </ul>
+    <b><u>FailedCreation</u></b>
+    <br> Parameters: None
+    <br> Description: Notifies the RegisteredUser controlling the Beacon of failed Beacon creation.
+    <ul>
+        <li>
+            Notify user that beacon creation failed.
+        </li>
+        <li>
+            Return to BeaconCreationWindow.
+        </li>
+    </ul>
+    <b><u>RegisterBeacon</u></b>
+    <br> Parameters: Beacon beacon
+    <br> Description: Registers Beacon to BeaconList.
+    <ul>
+        <li>
+            Add the beacon to the BeaconList.
+        </li>
+    </ul>
+    <b><u>CloseBeacon</u></b>
+    <br> Parameters: String userName
+    <br> Description: Allows UserBeacon to be closed by the RegisteredUser who is hosting the Beacon.
+    <ul>
+        <li>
+            Remove the Beacon from BeaconList.
+        </li>
+        <li>
+            Close the BeaconControlWindow.
+        </li>
+        <li>
+            Open the BeaconCreationWindow.
+        </li>
+    </ul>
+    <b><u>RelocateBeacon</u></b>
+    <br> Parameters: String userName, String location
+    <br> Description: Allows RegisteredUser controlling the beacon to relocate their Beacon.
+    <ul>
+        <li>
+            Use the key to identify the Beacon.
+        </li>
+        <li>
+            Update the location attribute of the respective beacon in BeaconDB.
+        </li>
+        <li>
+            Update BeaconControlWindow location value.
+        </li>
+    </ul>
+    <b><u>ExtendBeacon</u></b>
+    <br> Parameters: String userName, String date
+    <br> Description: Allows RegisteredUser controlling the Beacon to extend the time of their Beacon.
+    <ul>
+        <li>
+            Use the key to identify the Beacon in BeaconDB.
+        </li>
+        <li>
+            Extend the date to the date specified.
+        </li>
+    </ul>
+    <b><u>JoinBeacon</u></b>
+    <br> Parameters: String userName
+    <br> Description: Joins a GuestUser or RegisteredUser to a Beacon
+    <ul>
+        <li>
+            Use the key to identify the Beacon in BeaconDB.
+        </li>
+        <li>
+            If Beacon is found (if it still exists)
+            <ul type="a">
+                <li>
+                    Add user to the Beacon’s members list.
+                </li>
+                <li>
+                    Launch BeaconJoinedWindow.
+                </li>
+            </ul>
+            <li>
+                If Beacon is not found (it does not exist anymore)
+                <ul type="a">
+                    <li>
+                        Launch BeaconFailedJoinWindow.
+                    </li>
+                </ul>
+            </li>
+    </ul>
+    <b><u>LeaveBeacon</u></b>
+    <br> Parameters: String userName
+    <br> Description: Removes a GuestUser or RegisteredUser from a Beacon they are in.
+    <ul>
+        <li>
+            Use the key to identify the beacon in BeaconDB.
+        </li>
+        <li>
+            Remove userName from the beacon’s member list.
+        </li>
+        <li>
+            Return to HomeWindow.
+        </li>
+    </ul>
+    <b><u>NotifyUser</u></b>
+    <br> Parameters: String userName
+    <br> Description: Notifies GuestUser or RegisteredUser of an invitation to a Beacon.
+    <ul>
+        <li>
+            Use userName as a key to identify the beacon in BeaconDB.
+        </li>
+        <li>
+            Notify the user of an invite to the Beacon.
+        </li>
+        <li>
+            User can accept or decline.
+        </li>
+    </ul>
+    <b><u>ApplySearchFilters</u></b>
+    <br> Parameters: String course, String location
+    <br> Description: Applies Filters to be used while searching BeaconDB.
+    <ul>
+        <li>
+            Generate a temporary filtered list from BeaconDB based on filters the user has input. Templist is a list of userName Strings used as keys to identify beacons which follow the filter requirements.
+        </li>
+        <li>
+            Call DisplayResults
+        </li>
+    </ul>
+    <b><u>DisplayResults</u></b>
+    <br> Parameters: None
+    <br> Description: Displays results of a search.
+    <ul>
+        <li>
+            Pull list of beacons from Beaconlist.
+        </li>
+        <li>
+            Use information pulled from BeaconList to display results on HomeWindow.
+        </li>
+        <li>
+            Show HomeWindow.
+        </li>
+    </ul>
+    <b><u>BackToSearch</u></b>
+    <br> Parameters: None
+    <br> Description: Redirects GuestUser or RegisteredUser back to SearchWindow after a failed search.
+    <ul>
+        <li>
+            Launch message for failed search.
+        </li>
+        <li>
+            Launch search window.
+        </li>
+    </ul>
+    <h4><span id="4.1.3">Chat</span></h4>
+    <b><u>SendMsg</u></b>
+    <br>
+    Description: Sends a message to a chat.
+    <ul>
+        <li>
+            Generate a message object with proper msgString, timeStamp, and sender.
+        </li>
+        <li>
+            Adjust chatLog, and update the chat.
+        </li>
+        <li>
+            Use the chatID to identify the correct chat in ChatDB and append the new message to the chat.
+        </li>
+    </ul>
+
+    <h3><span id="4.2">Documentation</span></h3>
+    <b>Angular</b> Angular is an open-source front-end platform used to build web applications. It is maintained by Google, and was developed with the goal of minimizing size and maximizing performance of web applications. It is TypeScript based, meaning applications developed in angular can be coded in JavaScript. Angular has been chosen for the implementation of Study Space because it is robust and excels in the development of data-driven applications. It provides libraries that makes difficult operations such as data binding much easier. It allows for plenty of code reuse, and applications developed with Angular can be viewed on multiple platforms. Finally, Angular is well documented and easy to learn; There are plenty of resources online that can be accessed, including Tutorials on the Angular website.
+    <br>
+    <br>
+    <b>Material Design Lite</b> Material Design Lite is a CSS framework that allows attractive front end design for webpages. It was created by Google, and allows a unified user experience across many platforms. Material Design Lite is useful for styling the Study Space web application with a modern look and feel, as well as the implementation of self-evident features.
+    <br>
+    <br>
+    <b>Google Maps Api</b> The Google Maps API is a service which allows developers to integrate Google Maps into their websites and applications. This API was chosen to implement the map for Study Space because Google is the leading innovator in web mapping technology, and it is a service that all users of the application is familiar with.  The Google Maps API also provides a plethora of documentation which makes learning to work with it much easier.
+    <br>
+    <br>
+    <b>Node.js</b> Node.js is an open source, cross-platform javascript runtime environment for executing javascript code server-side. Node.js is particularly useful because the same language can be used on the front end and back end of development, which makes development much less trivial in general. It is event driven while also supporting asynchronous I/O which suits the needs of the Study Space application nicely.
+    <br>
+    <br>
+    <b>Firebase</b> Firebase is a mobile and web application development platform owned and maintained by Google. All data in Firebase databases is stored as JSON objects. For Study Space, Firebase is used to provide a realtime database to store information on user credentials, chat logs, active beacons, and more. Overall, it is a very functional platform that allows the Study Space team to be productive during the implementation of the project.
+
+    <h2><span id="5.0">Versions</span></h2>
+    <h5>Version 1.1 - 07/13/2017</h5>
+    <i>Document outline created</i>
+    <ul>
+        <li>- Orchid Amirziai</li>
+    </ul>
+    <i>Adjusted document based on SQA suggestions</i>
+    <ul>
+        <li>- Calvin Wang</li>
+		<li>- Mitch Marino</li>
+		<li>- Virack Chhom</li>
+		<li>- Ethyl Chan</li>
+		<li>- Amandeep Gogia</li>
+    </ul>
+    <i>Thanks to SQA by</i>
+    <ul>
+        <li>- Jake Loftus</li>
+        <li>- Matthew Younatan</li>
+		<li>- Garrett Parris</li>
+    </ul>
+    <h5>Version 1.2 - 07/17/2017</h5>
+    <i>Updated and bugfixed</i>
+    <ul>
+        <li>- Jonathan Wu</li>
+    </ul>
+	<i>Adjusted document based on SQA suggestions</i>
+    <ul>
+		<li>- Ethyl Chan</li>
+    </ul>
+    <i>Thanks to SQA by</i>
+    <ul>
+        <li>- Onkar Deol</li>
+    </ul>
+    <h5>Version 1.3 - 07/22/2017</h5>
+    <i>HTML and Images/Charts added</i>
+    <ul>
+        <li>- Shiv Gupta</li>
+    </ul>
+	<i>Adjusted document based on SQA suggestions</i>
+    <ul>
+		<li>- Amandeep Gogia</li>
+    </ul>
+    <i>Thanks to SQA by</i>
+    <ul>
+        <li>- Jake Loftus</li>
+        <li>- Onkar Deol</li>
+    </ul>
+     <h5>Version 1.4 - 08/08/2017</h5>
+    <i>Adjusted document based on SQA suggestions</i>
+    <ul>
+        <li>- Calvin Wang</li>
+    </ul>
+    <i>Thanks to SQA by</i>
+    <ul>
+        <li>- Jake Loftus</li>
+        <li>- Orchid Ami</li>
+    </ul>
+     <h5>Version 1.5 - 08/09/2017</h5>
+    <i>Adjusted document based on my SQA suggestions</i>
+    <ul>
+        <li>- Amnah Alahmadi</li>
+    </ul>
+
+
+</body>
+
+</html>
