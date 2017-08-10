@@ -9,7 +9,7 @@
                 Study Space
             </h1>
             Requirements Document
-            <br>Version 1.9 - 8/8/2017
+            <br>Version 2.0 - 8/9/2017
         </center>
     </header>
     <ul>
@@ -61,25 +61,25 @@
 		<h3><span id="1.3">Document Lexicon</span></h3>
 		
 			<h4><span id="1.3.1">Definitions</span></h4>
-				<u>Arrival Time</u>: The time the Beacon creator will arrive at the study location.
+				<u>Beacon Start Time</u>: The time the Beacon creator will arrive at the study location.
 				<br>
 				<u>Beacon</u>: A study location and the details of that study group, such as the course code, location, and start time of the study session.
 				<br>
-				<u>Beacon Description</u>: A user entered description of the Beacon, where they state specifics of the location, such as the room number, arrival and departure time, and what they are/will be working on.
+				<u>Beacon Description</u>: A user-entered description of the Beacon, where they state specifics of the location, such as the room number, start and end time, and what they be working on.
 				<br>
 				<u>Beacon Preview</u>: The Beacon as it appears on the map. When a user moves their mouse over the beacon, this icon gives a small preview about the given beacon’s description. For a more detailed description of the location the user may go to the left side of the page.
 				<br>
-				<u>Chat box</u>: Each user profile, course page, and beacon includes a discussion where users can post messages to comment or ask questions about the topic.
+				<u>Chat</u>: Each user profile, course page, and beacon includes a discussion where users can post messages to comment or ask questions about the topic.
 				<br>
-				<u>Course</u>: A course taken at a university, often represented by a course code, ex. CP317.
-				<br>
-				<u>Course Page</u>: A page with user submitted details on the course, such as midterm details. The page also includes a chat, so users can discuss the course with each other. 
+				<u>Course</u>: A course taken at a school represented by a course code, ex. CP317.
 				<br>	
-				<u>Departure Time</u>: The time the Beacon creator will leave the study location.
+				<u>Beacon End Time</u>: The time the Beacon creator will leave the study location.
+				<br>
+				<u>Google Maps API</u>: An API provided by Google which displays the map on the screen, and allows us to add Beacon markers to the map. It also allows us the get the position on the map in Longitude and Latitude, and then convert it into a user-friendly address string.
 				<br>
 				<u>Guest User</u>: A user who has not created an account or logged in.
 				<br>
-				<u>Notifications</u>: A message informing the user that a beacon for a course they're in has been created. 
+				<u>Notifications</u>: A message informing the user of a recent event, such as a beacon for a course they're in has been created or another user started a private chat with them.
 				<br>
 				<u>Registered User</u>: A user who has created an account and logged in.
 				<br>
@@ -90,9 +90,12 @@
 				<u>User Profile</u>: A page with personal details about the assumed student.  The profile provides functionality such as beacon invites, messaging, and course lists.
 				
 			<h4><span id="1.3.2">Acronyms and Abbreviations</span></h4>
-				<u>SRS</u>: Software Requirements Specifications. This is the document which has all requirements and standards contained.
-				<br>
-				<u>GUI</u>: Graphical User Interface. This is the interface which the user interacts with. It consists of traditional buttons and bars as well as more unique graphics, such as the map.
+			<u>API</u>: Application Program Interface. External software packages used in building our application.
+			<br>
+			<u>GUI</u>: Graphical User Interface. This is the interface which the user interacts with. It consists of traditional buttons and bars as well as more unique graphics, such as the map.
+			<br>
+			<u>SRS</u>: Software Requirements Specifications. This is the document which has all requirements and standards contained.
+
 		
 		<h3><span id="1.4">References</span></h3>
 		This SRS document is based on IEEE Std 830-1998.
@@ -118,16 +121,16 @@
 			<img src="Sample-GUI.png" alt="Sample GUI Image" style="width:1130;height:636;">
 
 		<h3><span id="2.2">Product Functions</span></h3>
-		Every user has the option to create a group or join a group. When a user creates a group they specify attributes of the group, such as the course code, where the group is located, and how long the group will be there.  If a user is registered for the same course, they receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they are able to select a group by looking at a map or by scrolling through a list of nearby beacons. The user is able to search for nearby groups by location, and filter these groups by the university they attend and the course code/course page of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users have the option to register an account and sign in to the website, which allows them to view and edit their beacons from any device they sign in with. Users are able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon.  Users are able to view the user profiles of other users, which allows them to invite users to their beacon or start a private chat with the user. Users are also able to view a course page for each course, which contains user submitted information about the course, and also includes a chat. 
+		Every user has the option to create a group or join a group. When a user creates a group they specify attributes of the group, such as the course code, where the group is located, and how long the group will be there.  If a user is registered for the same course, they receive a notification mentioning that a beacon in that course has opened up. If a user wishes to join a group, they are able to select a group by looking at a map or by scrolling through a list of nearby beacons. The user is able to search for nearby groups by location, and filter these groups by the school they attend and the course code of the class they are studying. The user who has created a group can drop a pin on the map and other users can join and go to that location. Users have the option to register an account and sign in to the website, which allows them to view and edit their beacons from any device they sign in with. Users are able to open a chat box for each beacon and post messages to the creator of the beacon and anyone else attending that beacon.  Users are able to view the user profiles of other users, which allows them to invite users to their beacon or start a private chat with the user.
 		
 		<h3><span id="2.3">User Characteristics</span></h3>
-		The intended audience are post-secondary students with the technical expertise to use a website. High school students could also use this product as well.
+		The intended audience are students with the technical expertise to use a website.
 
 		<h3><span id="2.4">Constraints</span></h3>
 		Multiple users must be able to access the website at once. To ensure the website feels responsive, the map of nearby beacons should update within a second whenever a user changes their parameters.
 
 		<h3><span id="2.5">Assumptions and Dependencies</span></h3>
-		Users are assumed to have a functioning web-capable device with a browser that is compatible with Google Maps. They are expected to have an internet connection until they enter their parameters and relevant Beacons are displayed. Once they have loaded their nearby Beacons, they should be able to disconnect from the internet and still view them, so they can check a Beacon’s description while they are traveling to it. This application should function on any operating system.
+		Users are assumed to have a functioning web-capable device with a browser that is compatible with the Google Maps API. They are expected to have an internet connection until they enter their parameters and relevant Beacons are displayed. Once they have loaded their nearby Beacons, they should be able to disconnect from the internet and still view them, so they can check a Beacon’s description while they are traveling to it. This application should function on any operating system.
 
 	<h2><span id="3.0">Specific Requirements</span></h2>
 	
@@ -136,15 +139,14 @@
 		<ul>
 			<li>The location entered by the user is both used as a filter, or if they make their own beacon, serves as their location. It finds nearby beacons or serve as the location for its own beacon. The user is able to search for their location using the Google Maps API.</li>
 			<li>When a user creates a beacon, they have the option to enter a description, such as specifying their location and the project they are working on. The length of this string is limited by what fits comfortably within the GUI. </li>
-			<li>During the beacon creation process, a user needs to enter their approximate arrival and departure time. The beacons are displayed in order of arrival time and stops being displayed to users after the departure time unless extended by the host. To ensure that the departure time is accurate, users have the option to delete or edit their beacon after creating one.</li>
-			<li>The course code entered by the user serves as a filter to find the relevant beacons.  The course code has a limit of 8 characters.  The course code filter works in conjunction with the other filters in order to narrow down the most suitable beacons currently near them.</li>
-			<li>The name of a user’s high school/university is entered by the user to be used as another beacon filter.</li>
+			<li>During the beacon creation process, a user needs to enter their approximate start and end time. The beacons are displayed in order of distance from the user and stops being displayed to users after the departure time unless extended by the host. To ensure that the departure time is accurate, users have the option to delete or edit their beacon after creating one.</li>
+			<li>The course code entered by the user serves as a filter to find the relevant beacons. The course code filter works in conjunction with the other filters in order to narrow down the most suitable beacons currently near them.</li>
+			<li>The name of a user’s school is entered by the user to be used as another beacon filter.</li>
 			<li>If a user searches for a beacon and none are found, display a message saying none have been found.</li>
 			<li>The beacon display boxes along the left side of the web application includes the school name, course code, user entered description, the beacon start/end time, and icons for tags such as whether there is a computer lab, whiteboards, WiFi, etc.</li>
 			<li>The screen display must fit the window on any resolution display and adjust automatically if the user resizes the window.</li>
 			<li>There is a chat window in the bottom right  of the screen, where the user can communicate with their friends and other users of the site.</li>
 			<li>The notification box is adjacent to the chat windows, and users are able to see beacons coming up for courses they are registered for.</li>
-			<li>The course page allows users to view details on their course submitted by other users. Some details present include exam details, sections, and other pertinent information to the course. The course page also includes a chat for people to discuss the course.</li>
 		</ul>
 		
 		<h3><span id="3.2">Functions</span></h3>
@@ -153,6 +155,7 @@
 			<li>If the Google Maps API cannot determine the position of their location based on their input, it is not accepted.</li> 
 			<li>The departure time must be after the arrival time, but no more than 12 hours after. If a student is studying for more than 12 hours, they are able to extend the duration. </li> 
 			<li>Any spaces in the course code are removed to simplify searching. For example, "CP 317" and "CP317" would both be compared as "CP317", and therefore are matched.</li> 
+			<li>School names are to be matched even if they are not exact text matches. For example, "Wilfrid Laurier University" should bring up beacons where the school name was entered as "Laurier", "WLU", or even "Wilfred Laurier University".</li>
 			<li>A user is only allowed to have one active beacon at a time. If they wish to create a beacon while another still exists, the start time of the new beacon must not overlap the duration of any of their existing or planned beacons.</li>
 			<li>Once the application receives acceptable input, the data is stored in the beacon database.</li>
 			<li>Clicking the login button gives the user the option to log in, register an account, or reset their password if they have forgotten it</li>
@@ -161,144 +164,147 @@
 		</ul>
 		
 		<h3><span id="3.3">Logical Database Requirements</span></h3>
-		<p>The <b>user</b> table includes exactly one row for each user. Each user has their own distinct primary key, referred to as the user key. The other columns in this table include the user’s email address and encrypted password. </p>
+		<p>The <b>user</b> table includes exactly one row for each user. Each user has their own distinct primary key, referred to as the user key. The other columns in this table include the user’s email address, first and last name, a user-entered description, courses, and encrypted password. It will include zero to many chat keys from the <b>chat</b> table as a foreign key, to attach the user to their private chats. It was also zero to many beacon keys from the <b>beacon</b> table, to keep track of the beacons the user has joined or created.</p>
 		
-		<p>The <b>course</b> table includes exactly one row for each course, and contains the course code and user-entered details about the course. The course code is the primary key, and it also includes a chat key from the <b>chat</b> table, so that the course page can retrieve the chat messages associated with the course page.</p>
-		
-		<p>The <b>beacon</b> table includes exactly one row for each beacon, and a unique primary key for each beacon. It includes the longitude and latitude of the study group, their school, course code, arrival time, and departure time. It also includes boolean columns for various tags, such as whether or not there is a computer lab, whiteboards, WiFi, etc. It also includes the user key from the <b>user</b> table as a foreign key, which allows beacons to be mapped to the user who created them. it also includes a chat key from the <b>chat</b> table, so the beacon page can retrieve the chat messages associated with the beacon. The <b>beacon</b> table is accessed every 5-15 minutes to refresh the list of nearby beacons. The <b>beacon</b> table needs to be updated every time a user creates a new beacon.</p>
+		<p>The <b>beacon</b> table includes exactly one row for each beacon, and a unique primary key for each beacon. It includes the longitude and latitude of the study group, their school, course code, arrival time, and departure time. It also includes a string which can be decoded into identifiers for various tags, such as whether or not there is a computer lab, whiteboards, WiFi, etc. It also includes the user key from the <b>user</b> table as a foreign key, which allows beacons to be mapped to the user who created them. It also includes a chat key from the <b>chat</b> table, so the beacon page can retrieve the chat messages associated with the beacon. The <b>beacon</b> table is accessed once per search, and then newly created beacons are pushed to the client. The <b>beacon</b> table needs to be updated every time a user creates a new beacon.</p>
 		
 		<p>The <b>chat</b> table includes one row for every chat message sent. The primary key is a chat key, which refers to either the beacon, course page, or private discussion where the chat occurs. Specifically, each beacon, course page, or private discussion has exactly one unique chat key, which is associated with every message in that chat. The <b>chat</b> table also includes a string containing the text of the message, the time the message was sent, and the user key of the user who sent the message as a foreign key from the <b>user</b> table. </p>
 
 		<h3><span id="3.4">Portability</span></h3>
 		We must create the application to be accessible on all devices, both mobile and desktop. This means it must be able to be accessed on Windows, Mac OS, and Linux devices. There is no mobile version of the web site. Because of the application’s web based nature, it is also necessary to make it work flawlessly on all browsers which are most commonly used, including Google Chrome, Firefox, Safari, and Internet Explorer (version 8.0+). 
 	
-	<h2><span id="4.0">Optional Features</span></h2>
-	The basic functions that our application must include are outlined in Section 2.2. In addition to those features, there are other functions we hope to include. However, due to time constraints, these functions may not be included in the final product. Listed below are these additional features:
-	<ul>
-		<li>Getting user profile icons using their email address</li>
-		<li>Intelligent correction of user mistakes when inputting school name</li>
-		<li>Favourite locations</li>
-		<li>Quiet/busy areas on map</li>
-		<li>Suggested locations to users</li>
-		<li>Search for multiple courses at once (separated by comma, semicolon, etc.)</li>
-		<li>Automatically open at user’s location / automatically move to school’s location</li>
-	</ul>
-	
 	<h2><span id="5.0">Versions</span></h2>
 	<h5>Version 0.1 - 5/5/2017</h5>
 	<i>Document outline created</i>
 	<ul>
-	<li>- Jake Loftus</li>
+	<li>Jake Loftus</li>
 	</ul>
 
 	<h5>Version 1.0 - 5/15/2017</h5>
 	<i>Sections modified and expanded</i>
 		<ul>
-		<li>- Jake Loftus</li>
-		<li>- Sheldon Van Middelkoop</li>
-		<li>- Andrew Fong</li>
-		<li>- Amelia Lee</li>
+		<li>Jake Loftus</li>
+		<li>Sheldon Van Middelkoop</li>
+		<li>Andrew Fong</li>
+		<li>Amelia Lee</li>
 		</ul>
 
 	<h5>Version 1.1 - 5/17/2017</h5>
 	<i>Adjusted document based on SQA suggestions</i>
 		<ul>
-		<li>- Jake Loftus</li>
-		<li>- Amelia Lee</li>
-		<li>- Sheldon Van Middelkoop</li>
+		<li>Jake Loftus</li>
+		<li>Amelia Lee</li>
+		<li>Sheldon Van Middelkoop</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>- Mitchell Marino</li>
-		<li>- Gareth John Sharpe</li>
-		<li>- Minji Kang</li>
-		<li>- Rishhi Balakrishnan</li>
+		<li>Mitchell Marino</li>
+		<li>Gareth John Sharpe</li>
+		<li>Minji Kang</li>
+		<li>Rishhi Balakrishnan</li>
 		</ul>
 
 	<h5>Version 1.2 - 5/20/2017</h5>
 	<i>Adjusted document based on David Brown's suggestions</i>
 		<ul>
-		<li>- Jake Loftus</li>
-		<li>- Sheldon Van Middelkoop</li>
+		<li>Jake Loftus</li>
+		<li>Sheldon Van Middelkoop</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>- David Brown</li>
-		<li>- Gareth John Sharpe</li>
+		<li>David Brown</li>
+		<li>Gareth John Sharpe</li>
 		</ul>
 
 	<h5>Version 1.3 - 5/24/2017</h5>
 	<i>Adjusted document based on SQA suggestions</i>
 		<ul>
-		<li>- Jake Loftus</li>
+		<li>Jake Loftus</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>- Minji Kang</li>
+		<li>Minji Kang</li>
 		</ul>
 		
 <h5>Version 1.4 - 6/1/2017</h5>
 	<i>Added additional requirements, specifically the user login functionality</i>
 		<ul>
-		<li>- Jake Loftus</li>
+		<li>Jake Loftus</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>- Amnah Alahmadi</li>
+		<li>Amnah Alahmadi</li>
 		</ul>
 		
 <h5>Version 1.5 - 6/14/2017</h5>
 	<i>Added additional requirements, specifically the chat functionality, user profiles, and course pages</i>
 		<ul>
-		<li>- Jake Loftus</li>
-		<li>- Andrew Fong</li>
-		<li>- Amelia Lee</li>
+		<li>Jake Loftus</li>
+		<li>Andrew Fong</li>
+		<li>Amelia Lee</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>- Jonathan Wu</li>
+		<li>Jonathan Wu</li>
 		</ul>
 		
 <h5>Version 1.6 - 6/16/2017</h5>
 	<i>Adjusted document based on SQA suggestions</i>
 		<ul>
-		<li>- Jake Loftus</li>
-		<li>- Andrew Fong</li>
+		<li>Jake Loftus</li>
+		<li>Andrew Fong</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>- Gareth John Sharpe</li>
-		<li>- Mark Kokanovic</li>
-		<li>- Tala Abuadas</li>
-		<li>- Amnah Alahmadi</li>
+		<li>Gareth John Sharpe</li>
+		<li>Mark Kokanovic</li>
+		<li>Tala Abuadas</li>
+		<li>Amnah Alahmadi</li>
 		</ul>
 		
 <h5>Version 1.7 - 6/27/2017</h5>
 	<i>Adjusted document based on David Brown's feedback</i>
 		<ul>
-		<li>- Jake Loftus</li>
+		<li>Jake Loftus</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>- David Brown</li>
+		<li>David Brown</li>
 		</ul>
 		
 <h5>Version 1.8 - 6/28/2017</h5>
 	<i>Added CSS to dynamically number sections of document</i>
 		<ul>
-		<li>- Jasmaan Panesar</li>
+		<li>Jasmaan Panesar</li>
 		</ul>
 	<i>Thanks to SQA by</i>
 		<ul>
-		<li>- David Brown</li>
+		<li>David Brown</li>
 		</ul>
+		
+<h5>Version 1.9 - 7/14/2017</h5>
+	<i>Updated document to better align with Analysis and Design documents</i>
+		<ul>
+		<li>Jake Loftus</li>
+		</ul>	
+		
+<h5>Version 2.0 - 8/9/2017</h5>
+	<i>Updated document to reflect minor adjustments made during implementation</i>
+		<ul>
+		<li>Jake Loftus</li>
+		<li>Andrew Fong</li>
+		</ul>
+			<i>Thanks to SQA by</i>
+		<ul>
+		<li>Amnah Alahmadi</li>
+		</ul>	
 	
 	<h2><span id="6.0">Authored By</span></h2>
 	<ul>
-		<li>- Jake Loftus</li>
-		<li>- Sheldon Van Middelkoop</li>
-		<li>- Andrew Fong</li>
-		<li>- Amelia Lee</li>
+		<li>Jake Loftus</li>
+		<li>Sheldon Van Middelkoop</li>
+		<li>Andrew Fong</li>
+		<li>Amelia Lee</li>
 	</ul>
 </body>
 </link>
