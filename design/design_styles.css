@@ -1,0 +1,38 @@
+body {
+    counter-reset: section;
+}
+
+h2 {
+    counter-reset: subsection;
+}
+
+h2:before {
+    counter-increment: section;
+    content: counter(section) ". ";
+}
+h3{ 
+	counter-reset: subsubsection;
+}
+h3:before {
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) " ";
+}
+h4:before {
+    counter-increment: subsubsection;
+    content: counter(section) "." counter(subsection)"." counter(subsubsection) " ";
+}
+
+h5{ 
+	font-weight: bold;
+    text-decoration: underline;
+}
+
+ul {
+  counter-reset: listsection;                
+  list-style-type: none;
+}
+
+li::before {
+  counter-increment: listsection;            
+  content: counters(listsection, ".") " ";   
+}
