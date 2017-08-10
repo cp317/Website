@@ -25,13 +25,3 @@ h4:before {
 h5{ 
 	font-size: 20; 
 }
-
-ul {
-  counter-reset: listsection;                
-  list-style-type: none;
-}
-
-li::before {
-  counter-increment: listsection;            
-  content: counters(listsection, ".") " ";   
-}
